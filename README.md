@@ -2,7 +2,7 @@
 
 A retrieval-augmented generation (RAG) assistant for North Carolina educator licensure rules. A licensure analyst describes an anonymized educator ("BS in biology, year 2 of a Residency License, hasn't passed the content test") and gets an answer grounded in the State Board of Education's **LICN policy series**. Every claim cites the exact policy subsection it comes from, the assistant asks for missing facts instead of guessing, and it says when the policies don't cover a question.
 
-> **Status:** in active development. The corpus pipeline, evaluation set, and evaluation harness are complete. A long-context benchmark is running. The hybrid-retrieval RAG pipeline is next. See [Roadmap](#roadmap).
+> **Status:** in active development. The corpus pipeline, evaluation set, evaluation harness, and long-context benchmark are complete. The hybrid-retrieval RAG pipeline is next. See [Roadmap](#roadmap).
 
 ## Why this is harder than "chat with your PDFs"
 
@@ -53,21 +53,28 @@ Every pipeline returns the same structured answer (`AppAnswer`): a verdict (`yes
 
   Runs are saved and can be compared side by side.
 
-## Preliminary results
+## Results so far
 
-Long-context benchmark (the whole corpus in the prompt, Claude Haiku 5.5), on a 30-question stratified sample:
+**Long-context benchmark**: the whole corpus in the prompt, Claude Haiku 5.5, all 220 questions ([run](evals/runs/20261010-153106-long_context/summary.json)). This is the "perfect recall" bar the RAG pipeline will be measured against.
 
 | Metric | Result |
 |---|---|
-| Correct (judge) | 63% |
+| Correct (judge) | 56% |
 | Correct or partially correct | 100% |
-| Claims supported by the cited text | 91% |
+| Answers contradicting the answer key | 3% |
+| Key-point coverage | 81% |
+| Claims supported by the cited text | 90% |
+| Verdict matches the answer key | 80% |
+| Citation recall / precision (section level) | 72% / 80% |
 | Citations to non-existent passages | 0% |
-| Asks for missing facts when needed | 100% |
 | Declines out-of-scope questions | 100% |
-| Cost / latency per question | $0.0018 / ~12s |
+| Wrongly declines answerable questions | 0% |
+| Asks for missing facts when needed | 100% |
+| Cost / latency (median) per question | $0.0018 / 12s |
 
-The most common errors so far are **unit conversions** (for example, converting semester hours to CEUs) and **declaring a question "not covered" when the policies do answer it**. Those findings shape the next phases: a calculator tool and tighter abstention rules. Full-set results and the RAG comparison will replace this table.
+Two caveats: "partially correct" usually means the bottom line is right but a supporting point is missing or slightly off, and the answer keys and judge are model-generated (human-reviewed keys come later), so the numbers are best read **relative to each other** across pipelines.
+
+The most common errors are **unit conversions** (for example, converting semester hours to CEUs), **declaring a question "not covered" when the policies do answer it**, and **time-dependent questions** (33% correct). Those findings shape the next phases: a calculator tool, tighter abstention rules, and clearer handling of effective dates.
 
 ## Quickstart
 

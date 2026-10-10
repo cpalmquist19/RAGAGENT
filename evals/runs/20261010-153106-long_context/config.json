@@ -1,0 +1,7 @@
+{
+  "pipeline": "long_context",
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "questions": 220,
+  "started": "2026-10-10T15:31:06"
+}
