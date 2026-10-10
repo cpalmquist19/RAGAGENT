@@ -9,10 +9,12 @@ question) and summary.json (aggregate metrics, overall and per question type).
 """
 
 import argparse
+import dataclasses
 import json
 import statistics
 import sys
 import threading
+import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -22,17 +24,17 @@ from typing import Any
 import anthropic
 
 from licn_rag.corpus import Corpus
-from licn_rag.evals.score import deterministic, judge
+from licn_rag.evals.score import deterministic, judge, section_of
 from licn_rag.llm import make_client, verify_workspace
 from licn_rag.pipelines.base import Pipeline
-from licn_rag.pipelines.long_context import LongContextPipeline
+from licn_rag.pipelines.rag import VARIANTS, RagPipeline
+from licn_rag.pipelines.registry import PIPELINES
 
 QUESTIONS = Path("evals/data/draft_questions.jsonl")
 ANSWER_KEYS = Path("evals/data/silver_answers.jsonl")
 RUNS_DIR = Path("evals/runs")
 DEFAULT_MODEL = "claude-haiku-5-5"
 
-PIPELINES = {"long_context": LongContextPipeline}
 
 # (metric, label, how to aggregate). "rate" averages booleans/fractions over the
 # questions where the metric applies; "any" is the share of questions where it's > 0.
@@ -243,6 +245,58 @@ def cmd_run(args: argparse.Namespace) -> None:
     )
 
 
+def cmd_retrieval(args: argparse.Namespace) -> None:
+    """Score retrieval alone against the answer keys: no LLM calls, no cost."""
+    keys = {r["id"]: r["answer"] for r in read_jsonl(ANSWER_KEYS) if "answer" in r}
+    questions = [q for q in select(keys, args) if keys[q["id"]]["answerable"] != "no"]
+    corpus = Corpus.load()
+    ks = [4, 8, 12, 20]
+    print(
+        f"{len(questions)} answerable questions · section-level recall of the answer key's"
+        " citations within the top-k retrieved chunks\n"
+    )
+    print(
+        f"{'pipeline':16}"
+        + "".join(f"{'R@' + str(k):>8}" for k in ks)
+        + f"{'policy R@8':>12}{'MRR':>7}{'ms/query':>10}"
+    )
+    for name in args.pipelines:
+        config = dataclasses.replace(VARIANTS[name], k=max(ks))
+        # Retrieval only: the LLM client is never used.
+        pipeline = RagPipeline(None, "", corpus, config, name=name)  # type: ignore[arg-type]
+        recall: dict[int, list[float]] = {k: [] for k in ks}
+        pol8, rr, ms = [], [], []
+        for q in questions:
+            key = keys[q["id"]]
+            expected = set(key["expected_citations"]) | {
+                c for kp in key["key_points"] for c in kp["citations"]
+            }
+            exp_sec = {section_of(c) for c in expected}
+            exp_pol = {c[:8] for c in expected}
+            start = time.perf_counter()
+            chunks = pipeline.retrieve(q["question"])
+            ms.append((time.perf_counter() - start) * 1000)
+            for k in ks:
+                got = {section_of(i) for c in chunks[:k] for i in c.cite_ids}
+                recall[k].append(len(exp_sec & got) / len(exp_sec))
+            pol8.append(len(exp_pol & {c.policy_code for c in chunks[:8]}) / len(exp_pol))
+            first = next(
+                (
+                    i
+                    for i, c in enumerate(chunks, 1)
+                    if exp_sec & {section_of(x) for x in c.cite_ids}
+                ),
+                None,
+            )
+            rr.append(1 / first if first else 0.0)
+        row = "".join(f"{statistics.mean(recall[k]):>8.0%}" for k in ks)
+        print(
+            f"{name:16}{row}{statistics.mean(pol8):>12.0%}{statistics.mean(rr):>7.2f}"
+            f"{statistics.median(ms):>10.0f}",
+            flush=True,
+        )
+
+
 def cmd_report(args: argparse.Namespace) -> None:
     runs = []
     for d in map(Path, args.runs):
@@ -266,11 +320,16 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--ids", nargs="+")
     r.add_argument("--types", nargs="+")
     r.add_argument("--workers", type=int, default=8)
+    rt = sub.add_parser("retrieval", help="score retrieval only (free)")
+    rt.add_argument("--pipelines", nargs="+", default=sorted(VARIANTS), choices=sorted(VARIANTS))
+    rt.add_argument("--sample", type=int)
+    rt.add_argument("--ids", nargs="+")
+    rt.add_argument("--types", nargs="+")
     p = sub.add_parser("report")
     p.add_argument("runs", nargs="+", help="run directories to compare")
     args = ap.parse_args(argv)
     try:
-        {"run": cmd_run, "report": cmd_report}[args.cmd](args)
+        {"run": cmd_run, "report": cmd_report, "retrieval": cmd_retrieval}[args.cmd](args)
     except anthropic.AuthenticationError:
         print("authentication failed: check ANTHROPIC_API_KEY in .env", file=sys.stderr)
         return 1

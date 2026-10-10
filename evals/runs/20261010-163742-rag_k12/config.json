@@ -1,0 +1,8 @@
+{
+  "pipeline": "rag_k12",
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "questions": 220,
+  "started": "2026-10-10T16:37:42",
+  "k": 12
+}

@@ -10,9 +10,7 @@ import textwrap
 
 from licn_rag.corpus import Corpus
 from licn_rag.llm import make_client
-from licn_rag.pipelines.long_context import LongContextPipeline
-
-PIPELINES = {"long_context": LongContextPipeline}
+from licn_rag.pipelines.registry import PIPELINES
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -22,7 +20,7 @@ def main(argv: list[str] | None = None) -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     ap.add_argument("question")
-    ap.add_argument("--pipeline", choices=sorted(PIPELINES), default="long_context")
+    ap.add_argument("--pipeline", choices=sorted(PIPELINES), default="rag")
     ap.add_argument("--model", default="claude-haiku-5-5")
     ap.add_argument("--sources", action="store_true", help="print cited passage text")
     args = ap.parse_args(argv)
