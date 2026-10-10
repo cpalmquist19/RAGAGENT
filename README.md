@@ -99,19 +99,21 @@ Requires Python 3.12+, [uv](https://docs.astral.sh/uv/), and an Anthropic API ke
 uv sync
 cp .env.example .env            # then add your ANTHROPIC_API_KEY
 
-# Ask a question
+# Build the search index (first run downloads Qwen3-Embedding-0.6B, ~1.2 GB; context
+# notes come from corpus/chunk_contexts.json, so no API calls unless chunks changed)
+uv run licn-index build
+uv run licn-index search "CEUs to renew a K-5 CPL"
+
+# Ask a question (RAG by default; --pipeline long_context for the benchmark)
 uv run licn-ask "Teacher has 6.5 CEUs this cycle on a CPL and teaches 4th grade. Enough to renew?"
 uv run licn-ask --sources "..."   # also print the text of every cited passage
 
-# Evaluate a pipeline
-uv run licn-index build                       # chunk, add context notes, embed, index
-uv run licn-index search "CEUs to renew a K-5 CPL"
-
-uv run licn-eval retrieval                       # retrieval-only ablation (free)
+# Evaluate
+uv run licn-eval retrieval                        # retrieval-only ablation (free)
 uv run licn-eval run --pipeline rag --sample 30   # end-to-end, scored by the judge
 uv run licn-eval report evals/runs/<run-a> evals/runs/<run-b>
 
-# Rebuild the corpus from saved policy pages
+# Rebuild the corpus from saved policy pages, then the index
 uv run licn-ingest path/to/saved-pages --out corpus/licn
 
 # Tests, lint, type check

@@ -1,15 +1,17 @@
 """Generate "silver" answer keys for the draft eval questions.
 
-A stronger model than the one under test reads the *entire* LICN corpus (it is small
+The model (ANTHROPIC_MODEL or --model) reads the *entire* LICN corpus (it is small
 enough) and writes, for each question: the reference answer, cited key points, false
 premises, missing facts, and out-of-scope parts. Every citation is checked against the
-corpus. Items stay `review_status: "silver"` until a human reviews them.
+corpus. Items stay `review_status: "silver"` until a human reviews them. Ideally the key
+writer is stronger than the model under test; the current keys are mostly Haiku 5.5.
 
     uv run licn-silver estimate                  # token count + cost estimate (free)
     uv run licn-silver pilot --n 3               # run a few now, at standard price
     uv run licn-silver run                       # everything now, in parallel (standard price)
-    uv run licn-silver submit                    # everything else via the Batch API (-50%)
-    uv run licn-silver collect                   # wait for the batch, validate, merge
+    uv run licn-silver submit                    # or: via the Batch API (-50%, turnaround
+    uv run licn-silver collect --wait            #     can be minutes to hours)
+    uv run licn-silver revalidate                # re-check citations after a corpus change
 
 Results merge into evals/data/silver_answers.jsonl keyed by question id, so re-running
 only fills in what's missing (use --ids / --force to redo specific questions).

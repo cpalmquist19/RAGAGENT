@@ -1,2 +1,1 @@
-def hello() -> str:
-    return "Hello from licn-rag!"
+"""Citation-grounded RAG assistant for NC educator licensure (LICN) policies."""
