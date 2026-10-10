@@ -1,0 +1,271 @@
+{
+  "code": "LICN-004",
+  "title": "License Application",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12",
+    "G.S. 115C-268.1",
+    "G.S. 115C-268.5",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0334"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=wJwkWJ49lplus5jFk7yL2UrEA==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-004_ License Application _ NC State Board of Education.html",
+  "sha256": "a14bc1c0049da2e9a6ad37ac7e6257ec267a99ed1d2abf5fa6f8f67655e8b74c",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the required components of an application for a license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Any applicant for professional educator license shall complete an application that includes the following information and credentials for the applicant:",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Full Legal Name.",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "United States Social Security Number.",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Date of Birth.",
+      "depth": 1,
+      "path": "1(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Physical Mailing Address.",
+      "depth": 1,
+      "path": "1(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Telephone Number.",
+      "depth": 1,
+      "path": "1(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Personal Email Address.",
+      "depth": 1,
+      "path": "1(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Educational credentials, including:",
+      "depth": 1,
+      "path": "1(g)",
+      "label": "(g)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Official transcripts for any degree obtained from an institution of higher or educator preparation program; and",
+      "depth": 2,
+      "path": "1(g)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Documentation, signed by an official authorized by the EPP to provide such information, verifying that the applicant has completed an EPP for the classification of license sought by the applicant.",
+      "depth": 2,
+      "path": "1(g)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A statement and supporting documentation disclosing the following information:",
+      "depth": 1,
+      "path": "1(h)",
+      "label": "(h)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Any prior suspension or revocation of a professional certificate or license issued by an occupational licensing board in North Carolina or any other state; and",
+      "depth": 2,
+      "path": "1(h)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Any criminal history not previously expunged in accordance with Chapter 15A, Article 5 of the General Statutes, including:",
+      "depth": 2,
+      "path": "1(h)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Pending or dismissed charges;",
+      "depth": 3,
+      "path": "1(h)(ii)(A)",
+      "label": "(A)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Deferred prosecution agreements or similar prosecutorial agreements, the terms of which have not yet been fulfilled by the applicant; and",
+      "depth": 3,
+      "path": "1(h)(ii)(B)",
+      "label": "(B)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Convictions, as defined in LICN-007, Subsection 2(b).",
+      "depth": 3,
+      "path": "1(h)(ii)(C)",
+      "label": "(C)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Proof of any current and valid educator license or certificate issued by another state, if applicable.",
+      "depth": 1,
+      "path": "1(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Proof of certification by the National Board for Professional Teaching Standards, if applicable.",
+      "depth": 1,
+      "path": "1(j)",
+      "label": "(j)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the applicant is seeking experience credit for prior work experience, documentation that the applicant meets the applicable requirements in LICN-006.",
+      "depth": 1,
+      "path": "1(k)",
+      "label": "(k)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Documentation of performance on any applicable licensure examination requirements.",
+      "depth": 1,
+      "path": "1(l)",
+      "label": "(l)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant shall pay the applicable application fee as defined in LICN-008.",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 Revised :"
+  },
+  "warnings": []
+}

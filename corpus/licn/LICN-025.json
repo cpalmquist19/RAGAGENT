@@ -1,0 +1,250 @@
+{
+  "code": "LICN-025",
+  "title": "Out-Of-State Applicants",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.25"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0344"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=OLNs7BgkkFnc0fTaR9NYzA==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-025_ Out-of-State Applicants _ NC State Board of Education.html",
+  "sha256": "480b853cbefc039d87d007bb385b38f170e4b58f1e5554f28f1e5783673ae8bd",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the qualifications and procedures for individuals holding a professional educator license in another jurisdiction to obtain a license in North Carolina.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Initial Professional License",
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An out-of-state applicant with fewer than three years of licensed professional educator experience may qualify for an initial professional license. To qualify for an IPL, the applicant must either:",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Hold a license in the corresponding license areas in a jurisdiction outside of North Carolina; or",
+      "depth": 2,
+      "path": "1(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Have completed an educator preparation program recognized by the jurisdiction in which the EPP has its principal place of business.",
+      "depth": 2,
+      "path": "1(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An out-of-state applicant who qualifies for an IPL in either Elementary Education or Special Education: General Curriculum must satisfy the applicable North Carolina licensure examination requirements by the end of the third year of licensure, regardless of whether the applicant passed an out-of-state exam in those areas. An out-of-state applicant who qualifies for an IPL in any other license area must either:",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Achieve a passing score on an out-of-state exam for that license area in the examining jurisdiction; or",
+      "depth": 2,
+      "path": "1(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Satisfy the applicable North Carolina licensure examination requirements before or during the third year of licensure, provided that the applicant attempted the examinations at least once during the first year of licensure.",
+      "depth": 2,
+      "path": "1(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Initial Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An out-of-state applicant with more than three years of licensed professional educator experience may qualify for a continuing professional license. To qualify for an CPL, the applicant must meet both of the following criteria:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Continuing Professional License",
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant holds a clear license issued under the licensing authority of a jurisdiction other than North Carolina. For purposes of this Rule, a “clear license” means a professional educator license or its equivalent that:",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Is in good standing with the licensing authority that issued the license;",
+      "depth": 2,
+      "path": "2(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Is renewable by the licensing authority that issued the license;",
+      "depth": 2,
+      "path": "2(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has not been revoked or had discipline imposed by the other jurisdiction;",
+      "depth": 2,
+      "path": "2(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Does not have an investigation relating to unprofessional conduct pending in any state relating to the license; and",
+      "depth": 2,
+      "path": "2(a)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has not been voluntarily surrendered while under investigation for unprofessional conduct in any state.",
+      "depth": 2,
+      "path": "2(a)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant holds a certification from the National Board for Professional Teaching standards, or the licensure requirements of the other jurisdiction are substantially similar to those in North Carolina. For purposes of this Policy, “substantially similar” means that the other jurisdiction required the applicant to, at minimum:",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Complete an educator preparation program recognized by the state in which the EPP is located; and",
+      "depth": 2,
+      "path": "2(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Achieve a passing score on an out-of-state exam in the other jurisdiction. The applicant must achieve a passing score on the applicable exam for each license area which licensure is sought under LICN-010.",
+      "depth": 2,
+      "path": "2(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To meet the qualifications for either an IPL or CPL based on achieving a passing score on an out-of-state exam, the applicant must present evidence of the exam results at the time of initial licensure in North Carolina. An out-of-state applicant may not use the results of an out-of-state exam to convert an IPL to a CPL.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": "Licensure Examination Requirements",
+      "section": "Licensure Examination Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An out-of-state applicant who qualifies for a teacher license under either Sections 1 or 2 may request to add an additional teaching license area to that license based solely on achieving a passing score on an out-of-state exam in that license area in the other jurisdiction, provided the applicant submits evidence of the exam results at the time of initial application for a North Carolina license. If the out-of-state applicant seeks to add an additional teaching license area after being issued a North Carolina license, the applicant must follow the requirements of LICN-013.",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": "Additional License Areas",
+      "section": "Additional License Areas",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

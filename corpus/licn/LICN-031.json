@@ -1,0 +1,101 @@
+{
+  "code": "LICN-031",
+  "title": "License Renewal for Administrators",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.30",
+    "G.S. 115C-284"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0362"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=XnTL35X0RDdB88N2RKFdCQ==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-031_ License Renewal for Administrators _ NC State Board of Education.html",
+  "sha256": "8b1f244ffd43207da05a5206effe61a071571def95e6368a61b62329426552ad",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the requirements for an administrator to renew a continuing professional license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each person holding an administrator license must renew that license every five years.",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Administrators must complete eight CEUs during each renewal cycle consisting of the following:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Four CEUs focused on the administrator’s leadership role in instruction, human resources, and management.",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Four general CEUs that are germane to the K-12 educational environment.",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-005)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-005) Revised :"
+  },
+  "warnings": []
+}

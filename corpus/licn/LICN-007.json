@@ -1,0 +1,1029 @@
+{
+  "code": "LICN-007",
+  "title": "Professional Educator Discipline",
+  "series": "LICN",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2018-05-03",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12",
+    "G.S. 115C-270.1",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.35",
+    "G.S. 115C-325",
+    "G.S. 115C-400",
+    "G.S. 150B-3",
+    "G.S. 150B-22",
+    "G.S. 150B-23"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0601–.0608"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=A00xLM7NMDc7HZBfXwC5Zg==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-007_ Professional Educator Discipline _ NC State Board of Education.html",
+  "sha256": "b64aeb268cf2bafbfa183ed434d576dd1814f8e8019a6e6aa5fb273792f0a8db",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy sets forth the circumstances and procedures pursuant to which the State Board of Education (“SBE”) may impose disciplinary sanctions against a professional educator licensed issued by the Department of Public Instruction, including the suspension or revocation of the educator’s license. This Policy also sets forth the circumstances and procedures pursuant to which the Superintendent may deny an application for a license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "It is the policy objective of the SBE to promote the highest standards of professional and ethical behavior among licensed professional educators, and to hold accountable those educators who fall short of those standards. Such standards are included, but not limited to, the Standards of Professional Conduct for North Carolina Educators, as set forth in SBE Policy EVAL-035.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In accordance with SBE Policy GOVR-005, the SBE hereby delegates to the Superintendent of Public Instruction (“Superintendent”) the authority to exercise all disciplinary powers of the SBE relating to licensure for professional educators, including those powers conferred by Title 16, Subchapter 6C, Section .0600 of the North Carolina Administrative Code",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Delegation of Authority",
+      "section": "Delegation of Authority",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "As used in this Policy, the following definitions apply:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Definitions",
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Child” means a person under the age of 16.",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Convicted” or “conviction” means any of the following:",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A plea of guilty.",
+      "depth": 2,
+      "path": "2(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A plea of no contest, nolo contendere, or the equivalent.",
+      "depth": 2,
+      "path": "2(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A verdict or finding of guilty by a jury, judge, magistrate, or other duly constituted adjudicatory body, tribunal, or official, either civilian or military.",
+      "depth": 2,
+      "path": "2(b)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“License” means a professional educator license issued by the Department of Public Instruction (“DPI”) in accordance with SBE policy and Chapter 115C, Article 17E of the General Statutes.",
+      "depth": 1,
+      "path": "2(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Local superintendent” means the superintendent of a local school administrative unit, as provided in Chapter 115C, Article 18 of the General Statutes, or the staff member with the highest decision-making authority for a PSU, if there is no superintendent.",
+      "depth": 1,
+      "path": "2(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Professional educator” or “educator” means an administrator, teacher, or student services personnel.",
+      "depth": 1,
+      "path": "2(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Respondent” means a person who currently holds a license or who has applied for a license.",
+      "depth": 1,
+      "path": "2(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Student” means a person enrolled in pre-kindergarten, kindergarten, or in 1st through 12th Grade in any public school unit, or who has been enrolled in a public school unit within the six months of an alleged violation of the Standards of Professional Conduct, as defined in SBE Policy EVAL-035.",
+      "depth": 1,
+      "path": "2(g)",
+      "label": "(g)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "section": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Upon receipt of allegations and substantiating information regarding a respondent that would provide cause for imposing disciplinary sanctions on a licensee or denying an application for a license under this Policy, the Superintendent shall investigate the allegations to determine if such action is warranted. The Superintendent shall investigate allegations or information from any source in a position to provide such information, including a PSU, State agency, court or other tribunal, or other credible person or institution. The Superintendent shall also consider information disclosed by a license applicant in the application.",
+      "depth": 1,
+      "path": "3(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Superintendent is authorized to utilize the power conferred upon SBE under G.S. 115C-270.35(e), including the power to subpoena documents, secure witness testimony, or hire investigators, for the purpose of conducting investigations under this Policy.",
+      "depth": 1,
+      "path": "3(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the Superintendent finds cause to impose disciplinary sanctions on a licensee or deny a license application for any of the reasons described in Section 4 of this Policy, the Superintendent shall prepare a proposed order containing findings of fact, conclusions of law, and the proposed sanction(s) or denial.",
+      "depth": 1,
+      "path": "3(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Superintendent shall provide the respondent with a copy of the proposed order and notify the respondent that the proposed sanctions or denial described in the order shall become final unless the respondent commences an administrative proceeding under Chapter 150B, Article 3 of the General Statutes within 60 days of the notice. The Superintendent shall send the notice via electronic mail and certified mail to the latest addresses provided to DPI, and the 60-day time limitation shall commence on the date of electronic delivery or placement of the notice in an official depository of the United States Postal Service, whichever is earlier, in accordance with G.S. 150B-23(f).",
+      "depth": 1,
+      "path": "3(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the respondent commences administrative proceedings, the Superintendent shall stay the proposed order until receipt of a final decision or order under G.S. 150B-34. If the respondent does not commence proceedings within the 60-day time limitation, the proposed order shall become final, and the Superintendent shall take all necessary actions to enforce the order.",
+      "depth": 1,
+      "path": "3(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Investigation of Alleged Misconduct by a Licensed Professional Educator or License Applicant",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": "Denying or Sanctioning a License",
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Superintendent may, following an investigation in accordance with Section 3 of this Policy, impose disciplinary sanctions on a person who holds a license or deny an application for any such license if the Superintendent finds, by a preponderance of the evidence, that the respondent has done any of the following:",
+      "depth": 1,
+      "path": "4(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Engaged in fraud, material misrepresentation, or concealment in an application for the license.",
+      "depth": 2,
+      "path": "4(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Become ineligible for the license due to changes or corrections in the license documentation.",
+      "depth": 2,
+      "path": "4(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Been convicted of a crime in any state, federal, or territorial court of the United States, including military tribunals.",
+      "depth": 2,
+      "path": "4(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Been dismissed by a local board of education, pursuant to G.S. 115C-325(e)(1) or 115C-325.4, or by the governing body of any other PSU.",
+      "depth": 2,
+      "path": "4(a)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Resigned from employment with a PSU without thirty calendar days’ notice, except with the prior consent of the local superintendent.",
+      "depth": 2,
+      "path": "4(a)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Had a professional educator license or other occupational license revoked or suspended in North Carolina or another state due to a finding of misconduct by the relevant occupational licensing board or agency.",
+      "depth": 2,
+      "path": "4(a)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Failed to report suspected child abuse in accordance with G.S. 115C-400 or other suspicion of professional misconduct by a licensed employee in accordance Section 9 of this Policy.",
+      "depth": 2,
+      "path": "4(a)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Violated the Testing Code of Ethics, as set forth in SBE Policy TEST-010.",
+      "depth": 2,
+      "path": "4(a)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Engaged in any other illegal, unethical, or lascivious conduct, or otherwise violated the Standards of Professional Conduct as set forth in SBE Policy EVAL-035.",
+      "depth": 2,
+      "path": "4(a)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "When deciding whether to impose disciplinary sanctions or deny an application for a license, the Superintendent shall consider the following factors:",
+      "depth": 1,
+      "path": "4(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The existence of a reasonable and adverse relationship between the underlying misconduct and the ability of the respondent to perform the respondent’s professional duties as an educator.",
+      "depth": 2,
+      "path": "4(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The severity of the misconduct.",
+      "depth": 2,
+      "path": "4(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The impact of the misconduct on students, other educators, and the school community.",
+      "depth": 2,
+      "path": "4(b)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The respondent’s degree of culpability in the misconduct.",
+      "depth": 2,
+      "path": "4(b)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The degree of remorse exhibited by the respondent for the misconduct.",
+      "depth": 2,
+      "path": "4(b)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Any evidence of reformed behavior on the part of the respondent.",
+      "depth": 2,
+      "path": "4(b)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Subsequent incidents of misconduct by the respondent or the probability of future misconduct.",
+      "depth": 2,
+      "path": "4(b)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the Superintendent determines that sanctions against a current licensee are warranted, the Superintendent shall impose sanctions in accordance with Section 5 of this Policy.",
+      "depth": 1,
+      "path": "4(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Denying or Sanctioning a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "5",
+      "label": "5.",
+      "heading": "Disciplinary Sanctions",
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Upon finding of a basis for imposing disciplinary sanctions against a respondent’s license respondent under Section 4 of this Policy, the Superintendent may impose any of the following sanctions:",
+      "depth": 1,
+      "path": "5(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Written Warning",
+      "depth": 2,
+      "path": "5(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Written Reprimand",
+      "depth": 2,
+      "path": "5(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Suspension for a Defined Term",
+      "depth": 2,
+      "path": "5(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Revocation",
+      "depth": 2,
+      "path": "5(a)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In addition to one of the sanctions listed in Subsection 5., the Superintendent may impose additional conditions upon a respondent—including requirements that the respondent complete additional continuing education credits beyond those required by G.S. 115C-270.30, community service hours, or other activities—if the purpose of the condition is remedial, relevant to the misconduct giving rise to the sanction, and designed to reduce the possibility of recidivism.",
+      "depth": 1,
+      "path": "5(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Notwithstanding Section 3.d. of this Policy, the Superintendent shall immediately and summarily suspend the license of a respondent if the Superintendent finds that the public health, safety, or welfare requires emergency action and incorporates those findings in the order prepared in accordance with Section 4 of this Policy. A finding that a respondent has been charged in the General Court of Justice with any crime, the conviction for which would result in automatic revocation of the respondent’s license under G.S. 115C-270.35(b), shall be considered prima facie evidence to justify a summary suspension. Following the summary suspension, the Superintendent shall promptly commence an investigation and proceedings in accordance with Section 3 of this Policy.",
+      "depth": 1,
+      "path": "5(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Department of Public Instruction shall, upon expiration of the 60-day time limitation described in Subsection 3. of this Policy, publish the sanction and a brief description of the basis for the sanction on its website and report it to the National Association of State Directors of Teacher Education and Certification (“NASDTEC”), except that this requirement shall not apply to a Written Warning. DPI shall not disclose any information related to the sanction that is considered confidential under Chapter 115C, Article 21A of the General Statutes or is otherwise protected from disclosure under State or federal law.",
+      "depth": 1,
+      "path": "5(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Disciplinary Sanctions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "6",
+      "label": "6.",
+      "heading": "Automatic Revocation",
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In accordance with G.S. 115C-270.35(b), the Superintendent shall automatically revoke the license of a professional educator without the right to a hearing under Chapter 150B, Article 3 of the General Statutes upon receiving verification of the identity of the professional educator together with a certified copy of a criminal record showing that the professional educator has entered a plea of guilty or nolo contendere to or has been finally convicted of any of the following crimes:",
+      "depth": 1,
+      "path": "6(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Murder in the first or second degree, G.S. 14-17.",
+      "depth": 2,
+      "path": "6(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Conspiracy or solicitation to commit murder, G.S. 14-18.1.",
+      "depth": 2,
+      "path": "6(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Rape or sexual offense, as defined in Article 7B of Chapter 14 of the General Statutes.",
+      "depth": 2,
+      "path": "6(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Felonious assault with deadly weapon with intent to kill or inflicting serious injury, G.S. 14-32.",
+      "depth": 2,
+      "path": "6(a)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Kidnapping, G.S. 14-39.",
+      "depth": 2,
+      "path": "6(a)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Abduction of children, G.S. 14-41.",
+      "depth": 2,
+      "path": "6(a)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Crime against nature, G.S. 14-177.",
+      "depth": 2,
+      "path": "6(a)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Incest, G.S. 14-178 or G.S. 14-179.",
+      "depth": 2,
+      "path": "6(a)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Employing or permitting minor to assist in offense against public morality and decency, G.S. 14-190.6.",
+      "depth": 2,
+      "path": "6(a)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Dissemination to minors under the age of 16 years, G.S. 14-190.7.",
+      "depth": 2,
+      "path": "6(a)(x)",
+      "label": "(x)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Dissemination to minors under the age of 13 years, G.S. 14-190.8.",
+      "depth": 2,
+      "path": "6(a)(xi)",
+      "label": "(xi)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Displaying material harmful to minors, G.S. 14-190.14.",
+      "depth": 2,
+      "path": "6(a)(xii)",
+      "label": "(xii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Disseminating harmful material to minors, G.S. 14-190.15.",
+      "depth": 2,
+      "path": "6(a)(xiii)",
+      "label": "(xiii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "First degree sexual exploitation of a minor, G.S. 14-190.16.",
+      "depth": 2,
+      "path": "6(a)(xiv)",
+      "label": "(xiv)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Second degree sexual exploitation of a minor, G.S. 14-190.17.",
+      "depth": 2,
+      "path": "6(a)(xv)",
+      "label": "(xv)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Third degree sexual exploitation of a minor, G.S. 14-190.17A.",
+      "depth": 2,
+      "path": "6(a)(xvi)",
+      "label": "(xvi)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Taking indecent liberties with children, G.S. 14-202.1.",
+      "depth": 2,
+      "path": "6(a)(xvii)",
+      "label": "(xvii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Solicitation of child by computer to commit an unlawful sex act, 14-202.3.",
+      "depth": 2,
+      "path": "6(a)(xviii)",
+      "label": "(xviii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Taking indecent liberties with a student, G.S. 14-202.4.",
+      "depth": 2,
+      "path": "6(a)(xix)",
+      "label": "(xix)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Prostitution, G.S. 14-204.",
+      "depth": 2,
+      "path": "6(a)(xx)",
+      "label": "(xx)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Patronizing a prostitute who is a minor or has a mental disability, G.S. 14-205.2(c) or (d).",
+      "depth": 2,
+      "path": "6(a)(xxi)",
+      "label": "(xxi)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Promoting prostitution of a minor or a person who has a mental disability, G.S. 14-205.3(b).",
+      "depth": 2,
+      "path": "6(a)(xxii)",
+      "label": "(xxii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Child abuse under G.S. 14-318.4.",
+      "depth": 2,
+      "path": "6(a)(xxiii)",
+      "label": "(xxiii)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Superintendent shall mail notice of the Superintendent’s intent to act pursuant to this Section by certified mail, return receipt requested, directed to the professional educator’s last known address. The notice shall inform the professional educator that the Superintendent will revoke the person’s license unless the professional educator notifies the Superintendent in writing within 10 days after receipt of the notice that the defendant identified in the criminal record is not the same person as the professional educator. If the professional educator provides this written notice to the Superintendent, the Superintendent shall not revoke the license unless the Superintendent can establish as a fact that the defendant and the professional educator are the same person.",
+      "depth": 1,
+      "path": "6(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Automatic Revocation",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "7",
+      "label": "7.",
+      "heading": "Voluntary Surrender of a License",
+      "section": "Voluntary Surrender of a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An individual licensed under Chapter 115C, Article 17E of the General Statutes may notify the Superintendent in writing of the individual’s intention to voluntarily surrender the individual’s license to DPI.",
+      "depth": 1,
+      "path": "7(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Voluntary Surrender of a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Superintendent may accept the voluntary surrender of a license in lieu of pursuing revocation of the license if, following an investigation in accordance with Section 3 of this Policy, the Superintendent determines that the surrender of the license will not compromise public safety. The Superintendent shall prepare a proposed order containing findings of fact and conclusions of law demonstrating that circumstances exist that would justify pursuing revocation of the respondent’s license. The Superintendent shall provide the respondent with a copy of the proposed order and notify the respondent that the respondent’s license will be revoked within 10 days of the notice. The Superintendent shall send the notice via electronic mail and certified mail to the latest addresses provided to DPI.",
+      "depth": 1,
+      "path": "7(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Voluntary Surrender of a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Department of Public Instruction shall, upon expiration of the 10-day time limitation described in Subsection 3.d of this Policy, publish the revocation and a brief description of the basis for the revocation on its website and report it to NASDTEC. DPI shall not disclose any information related to the revocation that is considered confidential under Chapter 115C, Article 21A of the General Statutes or is otherwise protected from disclosure under State or federal law.",
+      "depth": 1,
+      "path": "7(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Voluntary Surrender of a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "8",
+      "label": "8.",
+      "heading": "Reinstatement of or Reconsideration for a License",
+      "section": "Reinstatement of or Reconsideration for a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An individual whose license has been revoked or whose application for a license has been denied under this Policy may petition for reinstatement of the revoked license or reconsideration of the license application no sooner than 12 months after the effective date of the revocation or denial.",
+      "depth": 1,
+      "path": "8(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Reinstatement of or Reconsideration for a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The petitioner shall submit a petition to the Superintendent in writing that includes a statement describing why the circumstances that led to the revocation or denial do not or no longer justify prohibiting the petitioner from holding a license.",
+      "depth": 1,
+      "path": "8(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Reinstatement of or Reconsideration for a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Superintendent may deny the petition, grant the petition, or grant the request on a probationary basis. If the Superintendent grants the petition on a probationary basis, the petitioner’s license status shall be subject to review by the Superintendent one year from the date that the license is granted, and the petitioner shall comply with any conditions the Superintendent may impose.",
+      "depth": 1,
+      "path": "8(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Reinstatement of or Reconsideration for a License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "9",
+      "label": "9.",
+      "heading": "Reporting Requirements for PSU Administrators",
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "For purposes of this Section, the following definitions apply:",
+      "depth": 1,
+      "path": "9(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Administrator” means a superintendent, associate superintendent, assistant superintendent, personnel administrator, principal, school director, or head of school employed by a PSU.",
+      "depth": 2,
+      "path": "9(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Misconduct” means either:",
+      "depth": 2,
+      "path": "9(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Conduct that justifies automatic revocation of a license under G.S. 115C-270.35(b);",
+      "depth": 3,
+      "path": "9(a)(ii)(A)",
+      "label": "(A)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Conduct that has resulted in a criminal charge or indictment for any of the crimes listed in G.S. 115C-270.35(b); or",
+      "depth": 3,
+      "path": "9(a)(ii)(B)",
+      "label": "(B)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Conduct involving the physical or sexual abuse of a child or a student. “Physical abuse” means the infliction of physical injury other than by accident or in self-defense. “Sexual abuse” means any sexual contact with a child or student, regardless of the presence or absence of consent.",
+      "depth": 3,
+      "path": "9(a)(ii)(C)",
+      "label": "(C)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In addition to any duty to report suspected child abuse under G.S. 115C-400 or other provision of law, any administrator who knows, has reason to believe, or has actual notice of a complaint that a professional educator licensed under Chapter 115C, Article 17E of the General Statutes has engaged in misconduct, as defined in Subsection 9.a.ii, that results in the suspension without pay, termination of employment, non-renewal of the employment contract, or resignation of the educator shall report the misconduct in writing to the Superintendent of Public Instruction within five calendar days of the dismissal, suspension, nonrenewal, or acceptance of the educator’s resignation by the governing body of the PSU or its authorized designee. If an educator resigns within 30 days of a complaint for misconduct or during an ongoing investigation of a complaint, the alleged misconduct is presumed to have resulted in the resignation.",
+      "depth": 1,
+      "path": "9(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If a PSU governing body or its authorized designee demotes, dismisses, declines to renew the employment contract, or accepts the resignation of a professional educator licensed under Chapter 115C, Article 17E of the General Statutes as a result of conduct that is not covered by Subsection 9.b. but that may otherwise justify disciplinary sanctions against the educator under Section 4 of this Policy, an administrator for the PSU shall report the conduct in writing to the Superintendent within 30 calendar days of the demotion, dismissal, nonrenewal, or acceptance of the educator’s or resignation by the governing body of the PSU or its authorized designee.",
+      "depth": 1,
+      "path": "9(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If one administrator submits a single report on behalf of the PSU pursuant to the requirements of this Policy, that report shall satisfy the reporting obligations of all administrators who may have reporting obligations under this Policy or under G.S. 115C-326.20.",
+      "depth": 1,
+      "path": "9(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If a PSU terminates the employment of an educator, does not renew the educator’s contract, or accepts the educator’s resignation for any reason that may require a report under this Policy, an administrator for the PSU shall notify the educator of the reporting requirement upon separation from employment.",
+      "depth": 1,
+      "path": "9(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In accordance with G.S. 115C-13 and notwithstanding Chapter 115C, Article 21A of the General Statutes, local boards of education and their officers and employees shall provide to the SBE or the Superintendent, upon request, all personnel records and other investigative records associated with any educator reported to the Superintendent pursuant to this Policy. This provision does not apply to communications between an attorney and the local board or its officers or employees that is subject to attorney-client privilege.",
+      "depth": 1,
+      "path": "9(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "This criminal history reporting requirements of G.S. 115C-332(e) shall be governed by this Policy. If the local board of education of the local school administrative unit in which a charter school is located has adopted a policy requiring criminal history checks consistent with G.S. 115C-332, the board of directors of the charter school shall report the results of a criminal history check for a licensed professional educator under its employment to the Department of Public Instruction in accordance with this Policy.",
+      "depth": 1,
+      "path": "9(g)",
+      "label": "(g)",
+      "heading": null,
+      "section": "Reporting Requirements for PSU Administrators",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "July 1, 1986",
+    "revised": [
+      "July 1, 2026",
+      "July 1, 2025",
+      "May 2, 2024",
+      "May 3, 2018",
+      "Oct. 7, 2004",
+      "Nov. 1, 2001",
+      "Aug. 1, 2000",
+      "May 6, 1999",
+      "Oct. 1, 1993",
+      "Aug. 4, 1993",
+      "Nov. 1, 1990",
+      "July 1, 1988"
+    ],
+    "raw": "Policy History Adopted : July 1, 1986 Revised : July 1, 2026; July 1, 2025; May 2, 2024; May 3, 2018; Oct. 7, 2004; Nov. 1, 2001; Aug. 1, 2000; May 6, 1999; Oct. 1, 1993; Aug. 4, 1993; Nov. 1, 1990; July 1, 1988"
+  },
+  "warnings": []
+}

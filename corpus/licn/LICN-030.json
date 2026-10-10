@@ -1,0 +1,230 @@
+{
+  "code": "LICN-030",
+  "title": "License Renewal for Teachers",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.30"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0360"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=OnJukKFBKWslshJMN5X5p6fOw==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-030_ License Renewal for Teachers _ NC State Board of Education.html",
+  "sha256": "a6c7d4e73e8fa6657fb8c0ef58eb6eb5893a4e29c0f484cc8c79540ebaf98803",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the requirements for a teacher to renew a continuing professional license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each teacher holding a CPL must renew that license every five years.",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Continuing Education",
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Teachers in Pre-Kindergarten through Grade 5 must complete eight CEUs during each renewal cycle consisting of the following:",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Three CEUs in the teacher’s license area, consistent with Standards 3 and 4 of the North Carolina Professional Teaching Standards.",
+      "depth": 2,
+      "path": "1(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Three CEUs related to literacy, as described in G.S. 115C-270.30(b)(2).",
+      "depth": 2,
+      "path": "1(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Two general CEUs that are germane to the K-12 educational environment.",
+      "depth": 2,
+      "path": "1(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Teachers in Grades 6 through 12 must complete eight CEUs during each renewal cycle consisting of the following:",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Four CEUs in the teacher’s license area, consistent with Standards 3 and 4 of the North Carolina Professional Teaching Standards.",
+      "depth": 2,
+      "path": "1(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Four general CEUs that are germane to the K-12 educational environment.",
+      "depth": 2,
+      "path": "1(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Continuing Education",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Evaluations and Mandatory Improvement Plans",
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each teacher shall maintain a professional development plan and participate in professional development activities aligned with the North Carolina Professional Teaching Standards. Teachers employed by a local board of education must have evidence of a rating of at least “proficient” on the teacher’s most recent annual evaluation in NCEES to renew a CPL. For purposes of this Policy, “proficient” shall be defined as achieving a rating of “Proficient” or higher on three of the five North Carolina Professional Teaching Standards as measured by the teacher’s annual evaluation, including a rating of \"Proficient\" on Standard 4.",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Notwithstanding Subsection 2(a), if a teacher employed by a local board of education possesses a current CPL, is in the final year of a renewal cycle, and was not deemed proficient on the teacher’s most recent annual evaluation, the local school administrative unit (“LSAU”) may place the teacher on a mandatory improvement plan so that the teacher can renew the teacher's license.",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the LSAU places the teacher on a mandatory improvement plan and the teacher otherwise meets the requirements for licensure, the Department of Public Instruction shall issue the teacher an IPL.",
+      "depth": 2,
+      "path": "2(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The term of the mandatory improvement plan shall be 90 instructional days for teachers in schools that are identified as low performing under G.S. 115C-105.37 and 60 instructional days for teachers in all other schools.",
+      "depth": 2,
+      "path": "2(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "At the conclusion of the three-year term of the IPL, the teacher may apply for a CPL if the teacher meets the requirements of this Policy, including completion of the required CEUs. The LSAU may require additional continuing education of the teacher in accordance with the deficiencies demonstrated on the teacher’s annual evaluation.",
+      "depth": 2,
+      "path": "2(b)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If a teacher meets the criteria in Section 1 but is not placed on a mandatory improvement plan by the employing LSAU, the teacher’s license shall expire at the end of the renewal cycle. A teacher whose license expires under these circumstances shall be eligible to apply for an IPL 30 days after receipt of notice of expiration from the Department of Public Instruction.",
+      "depth": 2,
+      "path": "2(b)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The reversion of a teacher’s license from a CPL to an IPL shall not be construed as a demotion in rank or result in a reduction of the teacher’s salary.",
+      "depth": 2,
+      "path": "2(b)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Evaluations and Mandatory Improvement Plans",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A member of the General Assembly shall be exempt from the continuing education requirements provided by this rule during any renewal cycle in which the member serves a term or some portion thereof in the General Assembly, so long as the member notifies the Department of Public Instruction of the exemption during that renewal cycle.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": "General Assembly Member Exemption",
+      "section": "General Assembly Member Exemption",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-005)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-005) Revised :"
+  },
+  "warnings": []
+}

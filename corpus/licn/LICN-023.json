@@ -1,0 +1,181 @@
+{
+  "code": "LICN-023",
+  "title": "Limited License",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.15",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.30"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0340"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=Hkj8NYJ8KNslshfmfVoEonlgA==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-023_ Limited License _ NC State Board of Education.html",
+  "sha256": "21c10a679480c4878f51a42102abbe1e6425fd8c78eff09fc679318f5dbde71f",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the qualifications and procedures for obtaining a limited license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Qualifications for a Limited License",
+      "section": "Qualifications for a Limited License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The governing body of a public school unit may request a limited license for an applicant under its employment if the applicant meets the requirements of G.S. 115C-270.20(a)(4a). A limited license may only be issued for teaching license areas, not for administrator or student services personnel license areas.",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Qualifications for a Limited License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A person who previously held a lateral entry license issued by DPI under G.S. 115C-297 (repealed by S.L. 2017-189) and satisfies all the requirements for an IPL or a CPL except that the person has not passed the licensure examination requirements for that license area shall qualify for a limited license if:",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Qualifications for a Limited License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The person is currently employed by the PSU governing body; and",
+      "depth": 2,
+      "path": "1(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Qualifications for a Limited License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The PSU governing body submits to DPI an affidavit, signed by the local superintendent (or equivalent chief executive officer) and the principal of the applicant’s school, stating that the person is currently employed by the PSU governing body, the applicant is an effective teacher, and the PSU governing body will encourage the applicant to pursue and IPL or CPL.",
+      "depth": 2,
+      "path": "1(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Qualifications for a Limited License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Limited License Renewal",
+      "section": "Limited License Renewal",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To renew a limited license, the PSU governing body employing the licensee shall submit to the Department of Public Instruction an affidavit, signed by the licensee’s supervising principal and the local superintendent (or equivalent chief executive officer), attesting to the following:",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Limited License Renewal",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The licensee is currently employed by the PSU governing body.",
+      "depth": 2,
+      "path": "2(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Limited License Renewal",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The licensee is an effective teacher.",
+      "depth": 2,
+      "path": "2(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Limited License Renewal",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The PSU will encourage the licensee to pursue a CPL.",
+      "depth": 2,
+      "path": "2(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Limited License Renewal",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To renew a limited license, the licensee shall demonstrate that the licensee meets or exceeds expected growth as measured by EVAAS, where such data is available. If a licensee has more than one year of growth data, DPI shall take the average of growth data to determine whether the licensee met or exceeded expected growth. Data shall be limited to the years since the limited license was first issued or its most recent prior renewal. DPI shall not consider EVAAS data from the 2019-2020 or 2020-2021 school year when considering a request to renew a limited license.",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Limited License Renewal",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Except for military service members and spouses covered by LICN-028, a person holding a limited license may not transfer that limited license from one PSU to another.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": "Portability",
+      "section": "Portability",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "July 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : July 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

@@ -1,0 +1,109 @@
+{
+  "code": "LICN-017",
+  "title": "Permit to Teach",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0341"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=mtFbcQBiubxM8epErfEUiA==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-017_ Permit to Teach _ NC State Board of Education.html",
+  "sha256": "245e5c594dee4bee6b814e470b1d44aec35f8439d564d865dd2ab0a1dc941847",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the qualifications and procedures for obtaining a permit to teach.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The governing body of a public school unit may request a permit to teach for an applicant under its employment if the applicant:",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Holds at least a bachelor’s degree; and",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has never been issued any other North Carolina professional educator license.",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A permit to teach shall be valid until June 30 of the fiscal year for which it was requested. A permit to teach cannot be extended or renewed.",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "For the purpose of certification for pay on the State Salary Schedule, a permit to teach shall be issued at the same level as that of a person who holds a bachelor’s degree (A-Level) teacher license with zero years of experience, regardless of the applicant’s education level or prior work experience.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

@@ -1,0 +1,251 @@
+{
+  "code": "LICN-012",
+  "title": "Student Services Personnel License",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 90-294",
+    "G.S. 90-295",
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0306"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=ven4plusYtue36hYbsaplus26c4g==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-012_ Student Services Personnel License _ NC State Board of Education.html",
+  "sha256": "c8994567faaa3743f76798b690e86df24a8ff9928c330e7862ca2e31522ea971",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the classifications of and qualifications for licensure of student services personnel.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A student services personnel license shall entitle the licensee to provide specialized assistance to students, teachers, and administrators.",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each student services personnel license shall be classified as one of the following:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "School Counselor",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "School Social Worker",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "School Psychologist",
+      "depth": 1,
+      "path": "2(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Media Coordinator",
+      "depth": 1,
+      "path": "2(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Instructional Technology Specialist-Telecommunications",
+      "depth": 1,
+      "path": "2(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Except as otherwise provided by this Policy, to qualify for a student services personnel license, an applicant must have completed an educator preparation program at one of the following levels:",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Master’s Degree (M – Level)",
+      "depth": 1,
+      "path": "3(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Specialist Degree (S – Level)",
+      "depth": 1,
+      "path": "3(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Doctoral Degree (D – Level)",
+      "depth": 1,
+      "path": "3(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An applicant is only eligible for a license at the highest degree level at which the applicant completed an EPP; however, the applicant may qualify for graduate salary pay under LICN-006.",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A school social worker license shall require preparation at the bachelor’s degree level (“A-Level”) or higher.",
+      "depth": 0,
+      "path": "5",
+      "label": "5.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A school psychologist license shall require preparation at the advanced/specialist or doctoral degree level. The credential of Nationally Certified School Psychologist (“NCSP”) issued by the National Association of School Psychologists shall entitle a holder of that credential to a continuing professional license.",
+      "depth": 0,
+      "path": "6",
+      "label": "6.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In order to serve as a school audiologist, a person shall hold a doctoral degree in audiology and an audiology license issued by the North Carolina Board of Examiners for Speech and Language Pathologists and Audiologists (“NCBOESLPA”). A person who obtained a master’s degree in audiology prior to October 1, 2007, shall be exempt from the doctoral degree requirement provided that the person remains licensed by the NCBOESLPA.",
+      "depth": 0,
+      "path": "7",
+      "label": "7.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "In order to serve as a school speech-language pathologist, a person shall hold a master’s or doctoral degree in speech-language pathology and a speech-language pathology license issued by the NCBOESLPA.",
+      "depth": 0,
+      "path": "8",
+      "label": "8.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An applicant for a student services personnel license must satisfy any applicable licensure examination requirements before or during the third year of licensure, provided that the applicant attempts the examination(s) at least once during the first year of licensure.",
+      "depth": 0,
+      "path": "9",
+      "label": "9.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If an applicant satisfies the examination requirements prior to initial application for a student services personnel license, the Department of Public Instruction shall issue the applicant a continuing professional license.",
+      "depth": 1,
+      "path": "9(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If an applicant does not satisfy the examination requirements prior to initial application for a student services personnel license but otherwise meets the qualifications for the license, the Department of Public Instruction shall issue the applicant an initial professional license.",
+      "depth": 1,
+      "path": "9(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

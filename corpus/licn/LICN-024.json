@@ -1,0 +1,191 @@
+{
+  "code": "LICN-024",
+  "title": "Continuing Professional License",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.15",
+    "G.S. 115C-270.20",
+    "G.S. 115C-295"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0337"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=wplus9l0WvPtrDF4njXBGaqYw==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-024_ Continuing Professional License _ NC State Board of Education.html",
+  "sha256": "2605540b9bc8cd5a7f25d9673f8dc3914e7e5aeb30abf48657179e522b93a7a0",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the qualifications and procedures for obtaining a continuing professional license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To qualify for a continuing professional teacher license, an applicant must:",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Teacher License",
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Hold an initial professional educator license or residency license in North Carolina;",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Satisfy the applicable licensure examination requirements before or during the third year of licensure, provided that the applicant must attempt the examinations at least once during the first year of licensure if the applicant did not satisfy the examination requirements before receiving an IPL;",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Have at least three years of licensed teaching experience; and",
+      "depth": 1,
+      "path": "1(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Have completed a Beginning Teacher Support Program, as provided in TCED-016, unless the applicant either:",
+      "depth": 1,
+      "path": "1(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has at least three years of licensed teaching experience outside of North Carolina; or",
+      "depth": 2,
+      "path": "1(d)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Previously held a CPL that reverted to an IPL in accordance with LICN-030.",
+      "depth": 2,
+      "path": "1(d)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Teacher License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To qualify for a continuing professional administrator or student services personnel license, an applicant must:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Administrator or Student Services Personnel License",
+      "section": "Administrator or Student Services Personnel License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Satisfy the applicable licensure examination requirements before or during the third year of licensure, provided that the applicant must attempt the examinations at least once during the first year of licensure if the applicant did not satisfy the examination requirements before receiving an IPL; and",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Administrator or Student Services Personnel License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Meet other requirements for the license provided by LICN-011 or LICN-012.",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Administrator or Student Services Personnel License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To qualify for a CPL based on possession of a clear license in another jurisdiction, an applicant must meet the requirements of LICN-025.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": null,
+      "section": "Administrator or Student Services Personnel License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A CPL shall entitle the licensee to practice as an independent professional educator in North Carolina.",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": null,
+      "section": "Administrator or Student Services Personnel License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A CPL shall remain in effect for five years after the licensee retires from full-time employment as a professional educator.",
+      "depth": 0,
+      "path": "5",
+      "label": "5.",
+      "heading": null,
+      "section": "Administrator or Student Services Personnel License",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-005, and LICN-022)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-005, and LICN-022) Revised :"
+  },
+  "warnings": []
+}

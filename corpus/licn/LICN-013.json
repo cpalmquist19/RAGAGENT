@@ -1,0 +1,200 @@
+{
+  "code": "LICN-013",
+  "title": "Add-On Teaching Areas",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.15",
+    "G.S. 115C-270.20"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0307"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=fzgzjCjEc9dpN9zy8OWKslshQ==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-013_ Add-On Teaching Areas _ NC State Board of Education.html",
+  "sha256": "9fdda99b89a9dac8090db6d5cb30f0c5671cf73418c24cfdc806220655a7fa2b",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the qualifications and procedures for adding a new license area to an existing initial professional license or continuing professional license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An applicant may request to add a new license area to an existing IPL or CPL. An applicant may only add a license area to an IPL if the applicant has met the licensure examination requirements for the initial license area. To qualify for additional areas on a teaching license, the applicant shall:",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Satisfy the applicable licensure examination requirements for that license area; or",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Complete 24 credit hours of coursework from an institution of higher education in the license area and obtains a grade of C or better in each course.",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "For the following license areas, an applicant may only add that license area by satisfying the applicable licensure examination requirements and cannot add that license area through coursework alone:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Elementary Education",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Exceptional Children: General Curriculum",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Department of Public Instruction shall not add additional teaching license areas pursuant to Section 1 to the following license classifications:",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Permit to Teach",
+      "depth": 1,
+      "path": "3(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Emergency License",
+      "depth": 1,
+      "path": "3(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Residency License",
+      "depth": 1,
+      "path": "3(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Limited License",
+      "depth": 1,
+      "path": "3(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Provisional License",
+      "depth": 1,
+      "path": "3(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "International Faculty License",
+      "depth": 1,
+      "path": "3(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Career and Technical Education – Restricted License",
+      "depth": 1,
+      "path": "3(g)",
+      "label": "(g)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

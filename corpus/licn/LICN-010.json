@@ -1,0 +1,1370 @@
+{
+  "code": "LICN-010",
+  "title": "Teacher License",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-154",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0304"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=akIxHkbzg6M63sdPjn0WkA==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-010_ Teacher Licensure _ NC State Board of Education.html",
+  "sha256": "02f574881b1114a7e883b2bee96504ccee1c246133d765565f543384464a89e0",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the various classifications of and qualifications for a teacher license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A teacher license shall entitle the licensee to teach in license area(s) indicated on the license.",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Except as provided in Section 5 below, to qualify for a teacher license, an applicant must have completed an educator preparation program at one of the following levels:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Bachelor’s Degree (A – Level)",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Master’s Degree (M – Level)",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Specialist Degree (S – Level)",
+      "depth": 1,
+      "path": "2(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Doctoral Degree (D – Level)",
+      "depth": 1,
+      "path": "2(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An applicant is only eligible for a license at the highest degree level at which the applicant completed an EPP; however, the applicant may qualify for graduate salary pay under LICN-006.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An applicant with a high school diploma (or equivalent) or associate’s degree (V-Level) may be issued a teaching license in the following license areas, provided the applicant meets all other requirements for the license classification sought by the application, as provided in Section 5.",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Career and Technical Education",
+      "depth": 1,
+      "path": "4(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Junior Reserve Officer Training Corps",
+      "depth": 1,
+      "path": "4(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Safety and Driver Education",
+      "depth": 1,
+      "path": "4(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each teacher license shall be classified as one of the following based on the applicant’s qualifications, in accordance with the corresponding rule:",
+      "depth": 0,
+      "path": "5",
+      "label": "5.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Initial Professional License, as provided in LICN-020.",
+      "depth": 1,
+      "path": "5(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Continuing Professional License, as provided in LICN-024.",
+      "depth": 1,
+      "path": "5(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Residency License, as provided in LICN-019.",
+      "depth": 1,
+      "path": "5(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Limited License, as provided in LICN-023.",
+      "depth": 1,
+      "path": "5(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Permit to Teach, as provided in LICN-017.",
+      "depth": 1,
+      "path": "5(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Emergency License, as provided in LICN-018.",
+      "depth": 1,
+      "path": "5(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "International Faculty License, as provided in LICN-026.",
+      "depth": 1,
+      "path": "5(g)",
+      "label": "(g)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Lifetime License, as provided in LICN-027.",
+      "depth": 1,
+      "path": "5(h)",
+      "label": "(h)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Provisional License, as provided in LICN-014.",
+      "depth": 1,
+      "path": "5(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each teacher license shall be classified as one or more of the following based on the license area(s) in which it entitles the applicant to teach:",
+      "depth": 0,
+      "path": "6",
+      "label": "6.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Elementary",
+      "depth": 1,
+      "path": "6(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Elementary (Kindergarten – Grade 6)",
+      "depth": 2,
+      "path": "6(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Birth – Kindergarten",
+      "depth": 2,
+      "path": "6(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Pre-School Add-On",
+      "depth": 2,
+      "path": "6(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Reading (Kindergarten – Grade 6)",
+      "depth": 2,
+      "path": "6(a)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Math (Kindergarten – Grade 6) Add-On",
+      "depth": 2,
+      "path": "6(a)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Science (Kindergarten – Grade 6) Add-On",
+      "depth": 2,
+      "path": "6(a)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Special Education: General Curriculum (Kindergarten – Grade 6)",
+      "depth": 2,
+      "path": "6(a)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Special Education: Adapted Curriculum (Kindergarten – Grade 6)",
+      "depth": 2,
+      "path": "6(a)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "The Pre-School, Math (Kindergarten – Grade 6), and Science (Kindergarten – Grade 6) classifications shall not be issued as standalone licenses but shall only be added to an existing license consistent with LICN-013 (“Additional Teaching Areas”). The Pre-School Add-On shall only be issued to an applicant with an existing license in Elementary Education, Special Education, or Family and Consumer Sciences – General.",
+      "depth": 2,
+      "path": "6(a)",
+      "label": null,
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Middle Grades (Grade 6 – Grade 9)",
+      "depth": 1,
+      "path": "6(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Language Arts",
+      "depth": 2,
+      "path": "6(b)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Mathematics",
+      "depth": 2,
+      "path": "6(b)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Science",
+      "depth": 2,
+      "path": "6(b)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Social Studies",
+      "depth": 2,
+      "path": "6(b)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Secondary (Grade 9 – Grade 12)",
+      "depth": 1,
+      "path": "6(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "English",
+      "depth": 2,
+      "path": "6(c)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Mathematics",
+      "depth": 2,
+      "path": "6(c)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Science",
+      "depth": 2,
+      "path": "6(c)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Earth Science",
+      "depth": 2,
+      "path": "6(c)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Biology",
+      "depth": 2,
+      "path": "6(c)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Physics",
+      "depth": 2,
+      "path": "6(c)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Chemistry",
+      "depth": 2,
+      "path": "6(c)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Social Studies",
+      "depth": 2,
+      "path": "6(c)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Political Science",
+      "depth": 2,
+      "path": "6(c)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Geography",
+      "depth": 2,
+      "path": "6(c)(x)",
+      "label": "(x)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "History",
+      "depth": 2,
+      "path": "6(c)(xi)",
+      "label": "(xi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Economics",
+      "depth": 2,
+      "path": "6(c)(xii)",
+      "label": "(xii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Sociology",
+      "depth": 2,
+      "path": "6(c)(xiii)",
+      "label": "(xiii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Anthropology",
+      "depth": 2,
+      "path": "6(c)(xiv)",
+      "label": "(xiv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Bible",
+      "depth": 2,
+      "path": "6(c)(xv)",
+      "label": "(xv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "French",
+      "depth": 2,
+      "path": "6(c)(xvi)",
+      "label": "(xvi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Spanish",
+      "depth": 2,
+      "path": "6(c)(xvii)",
+      "label": "(xvii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "German",
+      "depth": 2,
+      "path": "6(c)(xviii)",
+      "label": "(xviii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Japanese",
+      "depth": 2,
+      "path": "6(c)(xix)",
+      "label": "(xix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Russian",
+      "depth": 2,
+      "path": "6(c)(xx)",
+      "label": "(xx)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Other World Languages",
+      "depth": 2,
+      "path": "6(c)(xxi)",
+      "label": "(xxi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Special Subjects (Kindergarten – Grade 12)",
+      "depth": 1,
+      "path": "6(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Art",
+      "depth": 2,
+      "path": "6(d)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Music",
+      "depth": 2,
+      "path": "6(d)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Dance",
+      "depth": 2,
+      "path": "6(d)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Theater Arts",
+      "depth": 2,
+      "path": "6(d)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Health Specialist",
+      "depth": 2,
+      "path": "6(d)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Physical Education",
+      "depth": 2,
+      "path": "6(d)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Health and Physical Education",
+      "depth": 2,
+      "path": "6(d)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Safety and Driver Education",
+      "depth": 2,
+      "path": "6(d)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Speech Communication",
+      "depth": 2,
+      "path": "6(d)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Reading",
+      "depth": 2,
+      "path": "6(d)(x)",
+      "label": "(x)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Junior Reserve Officer Training Corps",
+      "depth": 2,
+      "path": "6(d)(xi)",
+      "label": "(xi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "English as a Second Language",
+      "depth": 2,
+      "path": "6(d)(xii)",
+      "label": "(xii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "American Sign Language",
+      "depth": 2,
+      "path": "6(d)(xiii)",
+      "label": "(xiii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "French",
+      "depth": 2,
+      "path": "6(d)(xiv)",
+      "label": "(xiv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Spanish",
+      "depth": 2,
+      "path": "6(d)(xv)",
+      "label": "(xv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "German",
+      "depth": 2,
+      "path": "6(d)(xvi)",
+      "label": "(xvi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Japanese",
+      "depth": 2,
+      "path": "6(d)(xvii)",
+      "label": "(xvii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Russian",
+      "depth": 2,
+      "path": "6(d)(xviii)",
+      "label": "(xviii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Arabic",
+      "depth": 2,
+      "path": "6(d)(xix)",
+      "label": "(xix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Cherokee",
+      "depth": 2,
+      "path": "6(d)(xx)",
+      "label": "(xx)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Chinese",
+      "depth": 2,
+      "path": "6(d)(xxi)",
+      "label": "(xxi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Greek (Ancient)",
+      "depth": 2,
+      "path": "6(d)(xxii)",
+      "label": "(xxii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Greek (Modern)",
+      "depth": 2,
+      "path": "6(d)(xxiii)",
+      "label": "(xxiii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Hebrew",
+      "depth": 2,
+      "path": "6(d)(xxiv)",
+      "label": "(xxiv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Hindi",
+      "depth": 2,
+      "path": "6(d)(xxv)",
+      "label": "(xxv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Italian",
+      "depth": 2,
+      "path": "6(d)(xxvi)",
+      "label": "(xxvi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Korean",
+      "depth": 2,
+      "path": "6(d)(xxvii)",
+      "label": "(xxvii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Latin",
+      "depth": 2,
+      "path": "6(d)(xxviii)",
+      "label": "(xxviii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Portuguese",
+      "depth": 2,
+      "path": "6(d)(xxix)",
+      "label": "(xxix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Swahili",
+      "depth": 2,
+      "path": "6(d)(xxx)",
+      "label": "(xxx)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Turkish",
+      "depth": 2,
+      "path": "6(d)(xxxi)",
+      "label": "(xxxi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Exceptional Children (Kindergarten – Grade 12)",
+      "depth": 1,
+      "path": "6(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Exceptional Children: General Curriculum",
+      "depth": 2,
+      "path": "6(e)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Exceptional Children: Adapted Curriculum",
+      "depth": 2,
+      "path": "6(e)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Learning Disabled",
+      "depth": 2,
+      "path": "6(e)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Cross Categorical (Mildly/Moderately Disabled)",
+      "depth": 2,
+      "path": "6(e)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Severely/Profoundly Disabled",
+      "depth": 2,
+      "path": "6(e)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Mentally Disabled",
+      "depth": 2,
+      "path": "6(e)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Academically or Intellectually Gifted",
+      "depth": 2,
+      "path": "6(e)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Deaf and Hard of Hearing",
+      "depth": 2,
+      "path": "6(e)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Visually Impaired",
+      "depth": 2,
+      "path": "6(e)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Behaviorally/Emotionally Disabled",
+      "depth": 2,
+      "path": "6(e)(x)",
+      "label": "(x)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Career and Technical Education",
+      "depth": 1,
+      "path": "6(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Agriculture Education",
+      "depth": 2,
+      "path": "6(f)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Aviation Education",
+      "depth": 2,
+      "path": "6(f)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Business, Finance, and Information Technology Education",
+      "depth": 2,
+      "path": "6(f)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Career Development Coordination",
+      "depth": 2,
+      "path": "6(f)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Career Development Facilitator",
+      "depth": 2,
+      "path": "6(f)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Computer Science and Information Technology Education",
+      "depth": 2,
+      "path": "6(f)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "CTE Local Course Option",
+      "depth": 2,
+      "path": "6(f)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Curriculum & Instructional Management Coordinator",
+      "depth": 2,
+      "path": "6(f)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Family and Consumer Sciences – General",
+      "depth": 2,
+      "path": "6(f)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Family and Consumer Sciences – Apparel",
+      "depth": 2,
+      "path": "6(f)(x)",
+      "label": "(x)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Family and Consumer Sciences – Child Development and Family Studies",
+      "depth": 2,
+      "path": "6(f)(xi)",
+      "label": "(xi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Family and Consumer Sciences – Food Nutrition and Culinary Arts",
+      "depth": 2,
+      "path": "6(f)(xii)",
+      "label": "(xii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Family and Consumer Sciences – Interior Design",
+      "depth": 2,
+      "path": "6(f)(xiii)",
+      "label": "(xiii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Health Sciences Education – Registered Nurse",
+      "depth": 2,
+      "path": "6(f)(xiv)",
+      "label": "(xiv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Health Sciences Education – Non-Registered Nurse",
+      "depth": 2,
+      "path": "6(f)(xv)",
+      "label": "(xv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Health Sciences Education – Biotechnology",
+      "depth": 2,
+      "path": "6(f)(xvi)",
+      "label": "(xvi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Marketing Education",
+      "depth": 2,
+      "path": "6(f)(xvii)",
+      "label": "(xvii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Special Populations Coordinator",
+      "depth": 2,
+      "path": "6(f)(xviii)",
+      "label": "(xviii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Technology, Engineering, and Design Education",
+      "depth": 2,
+      "path": "6(f)(xix)",
+      "label": "(xix)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Technology, Engineering, and Design Education – Digital Design / Animation and Game Art Design",
+      "depth": 2,
+      "path": "6(f)(xx)",
+      "label": "(xx)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Collision Repair",
+      "depth": 2,
+      "path": "6(f)(xxi)",
+      "label": "(xxi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Automotive Services",
+      "depth": 2,
+      "path": "6(f)(xxii)",
+      "label": "(xxii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Construction",
+      "depth": 2,
+      "path": "6(f)(xxiii)",
+      "label": "(xxiii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Drafting",
+      "depth": 2,
+      "path": "6(f)(xxiv)",
+      "label": "(xxiv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Welding",
+      "depth": 2,
+      "path": "6(f)(xxv)",
+      "label": "(xxv)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Manufacturing",
+      "depth": 2,
+      "path": "6(f)(xxvi)",
+      "label": "(xxvi)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Digital Media",
+      "depth": 2,
+      "path": "6(f)(xxvii)",
+      "label": "(xxvii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Trade and Industrial Education – Public Safety",
+      "depth": 2,
+      "path": "6(f)(xxviii)",
+      "label": "(xxviii)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

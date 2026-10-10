@@ -1,0 +1,544 @@
+{
+  "code": "LICN-019",
+  "title": "Residency License",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.10",
+    "G.S. 115C-270.15",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.25",
+    "G.S. 115C-295"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0338",
+    "16 NCAC 06C .0339"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=kHHJTpbnHCvYx19gTpSYZQ==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-019_ Residency License _ NC State Board of Education.html",
+  "sha256": "365bbd6069d1c1eeb31776b96f1b5dc33ba0362e66fefd8f83fdb246a2d6d96d",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy governs requests, eligibility, and renewal of residency licenses, as well as professional development requirements for a public school unit that employs an individual holding a residency license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Eligibility for a Residency License",
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The governing body of a public school unit or an eligible nonpublic school may request a residency license for an applicant under its employment if the applicant meets the requirements of G.S. 115C-270.20(a)(5) and has either:",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Completed at least 24 hours of coursework in the content area for which the license is sought; or",
+      "depth": 2,
+      "path": "1(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Passed the applicable licensure examination requirements for that content area.\nFor purposes of this Policy, an “eligible nonpublic school” is defined in G.S. 115C-207.20(a)(5)a.2.",
+      "depth": 2,
+      "path": "1(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A person who holds or previously held a residency license shall not be eligible for a permit to teach or an emergency license in the same license area.",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A person who previously held a lateral entry license issued by the Department of Public Instruction under G.S. 115C-297 (repealed by S.L. 2017-189) but did not convert that license to a continuing professional license prior to its expiration shall qualify for a residency license in the same license area if the person:",
+      "depth": 1,
+      "path": "1(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Meets the requirements of G.S. 115C-270.20(a)(5); and",
+      "depth": 2,
+      "path": "1(c)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has passed the applicable licensure examination requirements for that content area.",
+      "depth": 2,
+      "path": "1(c)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Eligibility for a Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Renewal of Residency Licenses",
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To renew a residency license, the PSU governing body or eligible nonpublic school employing the applicant shall provide documentation to DPI that the applicant:",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Is enrolled in a recognized educator preparation program;",
+      "depth": 2,
+      "path": "2(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Is employed as a teacher in the public school unit or eligible nonpublic school;",
+      "depth": 2,
+      "path": "2(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Acquired at least six months of teaching experience during the preceding school year; and",
+      "depth": 2,
+      "path": "2(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Completed 10 days of professional development, as described in Section 5 of this Policy, in the first year of the residency license.",
+      "depth": 2,
+      "path": "2(a)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If an applicant fails to renew a residency license for the second or third year, the residency license shall expire. A PSU governing body or eligible nonpublic school that hires the applicant within three years of the effective date of the initial residency license may request that DPI reinstate the license, provided that the license has not already been renewed twice and the PSU or eligible nonpublic school employing the applicant provides documentation that the applicant is employed by the PSU governing body or eligible nonpublic school and enrolled in a recognized educator preparation program.",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Renewal of Residency Licenses",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": "Conversion to an Initial or Continuing Professional License",
+      "section": "Conversion to an Initial or Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To convert a residency license to an IPL or a CPL, the applicant shall:",
+      "depth": 1,
+      "path": "3(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Conversion to an Initial or Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Meet the requirements for an IPL in LICN-020 or a CPL in LICN-024; and",
+      "depth": 2,
+      "path": "3(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Conversion to an Initial or Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Be recommended by the EPP that prepared the licensee.",
+      "depth": 2,
+      "path": "3(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Conversion to an Initial or Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the applicant satisfies the above requirements by June 30 of the third year of the residency license, the IPL or CPL shall be effective July 1 of the next fiscal year. If the applicant fails to satisfy the requirements by this date, the residency license shall expire, and the IPL or CPL shall be effective on the date the applicant satisfies the requirements.",
+      "depth": 1,
+      "path": "3(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Conversion to an Initial or Continuing Professional License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The governing body of a public school unit or eligible nonpublic school employing the applicant may request a residency license in an additional license area for an applicant under its employment if the applicant holds a clear license in another area, provided that the applicant meets the requirements of G.S. 115C-270.20(a)(5) for each of the requested areas.",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": "Additional License Areas",
+      "section": "Additional License Areas",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "5",
+      "label": "5.",
+      "heading": "Professional Development Requirements",
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A public school unit that employs a teacher holding a residency license shall, within the teacher’s first year on the license, provide the teacher with at least three hours of field experience before the teacher begins teaching in the classroom and at least 10 hours of field experience over the course of the year. The field experience requirement can be fulfilled while the teacher holds a permit to teach or an emergency license in advance of the first year of the residency license.",
+      "depth": 1,
+      "path": "5(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "For purposes of this Policy, “field experience” means opportunities to observe, practice, and demonstrate knowledge and skills in a classroom setting in the presence of students. Field experience may include preclinical classroom experiences.",
+      "depth": 1,
+      "path": "5(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The PSU shall provide the teacher with 10 days of professional development that includes the following:",
+      "depth": 1,
+      "path": "5(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An overview of the goals, policies, and procedures of the PSU.",
+      "depth": 2,
+      "path": "5(c)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An overview of the mission and goals of the State Board of Education.",
+      "depth": 2,
+      "path": "5(c)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A description of services and professional development opportunities available to the teacher.",
+      "depth": 2,
+      "path": "5(c)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Information on the process for obtaining a CPL.",
+      "depth": 2,
+      "path": "5(c)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The guidelines for optimal working conditions for all beginning teachers.",
+      "depth": 2,
+      "path": "5(c)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on EVAAS.",
+      "depth": 2,
+      "path": "5(c)(vi)",
+      "label": "(vi)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A review of the North Carolina Standard Course of Study, including end-of-grade and end-of-course testing requirements.",
+      "depth": 2,
+      "path": "5(c)(vii)",
+      "label": "(vii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A review of the PSU curriculum.",
+      "depth": 2,
+      "path": "5(c)(viii)",
+      "label": "(viii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on lesson planning.",
+      "depth": 2,
+      "path": "5(c)(ix)",
+      "label": "(ix)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on classroom organization.",
+      "depth": 2,
+      "path": "5(c)(x)",
+      "label": "(x)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on classroom management, including:",
+      "depth": 2,
+      "path": "5(c)(xi)",
+      "label": "(xi)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Positive management of student behavior;",
+      "depth": 3,
+      "path": "5(c)(xi)(A)",
+      "label": "(A)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Effective communication for defusing and de-escalating disruptive or dangerous behavior; and",
+      "depth": 3,
+      "path": "5(c)(xi)(B)",
+      "label": "(B)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Safe, appropriate, and legal use of seclusion and restraint.",
+      "depth": 3,
+      "path": "5(c)(xi)(C)",
+      "label": "(C)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "An overview of the identification and education of children with disabilities.",
+      "depth": 2,
+      "path": "5(c)(xii)",
+      "label": "(xii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The PSU may, in the alternative, satisfy the professional development requirements of Section a by requiring the teacher to complete the following:",
+      "depth": 1,
+      "path": "5(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The North Carolina Effective Teacher Training;",
+      "depth": 2,
+      "path": "5(d)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on evidence-based practices as defined in 20 U.S.C. 7801(21)(A);",
+      "depth": 2,
+      "path": "5(d)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on the Whole School, Whole Community, Whole Child Framework promulgated by the United States Centers for Disease Control and Prevention;",
+      "depth": 2,
+      "path": "5(d)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Training on positive management of student behavior and effective communication techniques for defusing and de-escalating disruptive and dangerous behavior; and",
+      "depth": 2,
+      "path": "5(d)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "State required training, such as the Science of Reading.",
+      "depth": 2,
+      "path": "5(d)(v)",
+      "label": "(v)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "For teachers holding a residency license, emergency license, or permit to teach, the PSU shall provide at least eight hours of training in Subsections (2)(d)(ii) through (2)(d)(v) before the teacher begins teaching in the classroom.",
+      "depth": 2,
+      "path": "5(d)",
+      "label": null,
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The PSU may provide all 10 days of professional development pursuant to Subsection (2)(a) or (2)(b) during the preservice period before the teacher begins teaching in the classroom or may provide five days of professional development during the preservice period with the remaining five days taking place throughout the teacher’s first year on the residency license.",
+      "depth": 1,
+      "path": "5(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Professional Development Requirements",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

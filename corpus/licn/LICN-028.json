@@ -1,0 +1,383 @@
+{
+  "code": "LICN-028",
+  "title": "Special License Provisions for Active-Duty Servicemembers and Spouses",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20",
+    "G.S. 10U.S.C.101",
+    "G.S. 50U.S.C.3911",
+    "G.S. 50U.S.C.3955",
+    "G.S. 50U.S.C.4025a"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0350"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=ndaYNDDkslYtTzZ5LMXokg==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-028_ Special License Provisions for Active-Duty Servicemembers and Spouses _ NC State Board of Education.html",
+  "sha256": "4373470c875288ed04d187250a44fe90b1fb22164ae8443369f53922072f3e93",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy sets forth special provisions related to professional educator licensure for active duty military servicemembers and their spouses, consistent with the Servicemembers Civil Relief Act and the Veterans Auto and Education Improvement Act of 2022.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "For purposes of this Policy, the following definitions apply:",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": "Definitions",
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Active duty” means full-time duty in the active military service of the United States, including sustained duty in the Space Force. Such term includes full-time training duty, annual training duty, and attendance, while in the active military service, at a school designated as a service school by law or by the Secretary of the military department concerned. Such term does not include full-time National Guard duty.",
+      "depth": 1,
+      "path": "1(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Armed forces” means the Army, Navy, Air Force, Marine Corps, Space Force, and Coast Guard.",
+      "depth": 1,
+      "path": "1(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Covered license” means a professional educator license or its equivalent that:",
+      "depth": 1,
+      "path": "1(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Is in good standing with the licensing authority that issued the license;",
+      "depth": 2,
+      "path": "1(c)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has not been revoked or had discipline imposed by any jurisdiction;",
+      "depth": 2,
+      "path": "1(c)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Does not have an investigation relating to unprofessional conduct pending in any jurisdiction relating to the license; and",
+      "depth": 2,
+      "path": "1(c)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Has not been voluntarily surrendered while under investigation for unprofessional Conduct in any jurisdiction.",
+      "depth": 2,
+      "path": "1(c)(iv)",
+      "label": "(iv)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Military orders” is defined in 50 U.S.C. 3955(i)(1).",
+      "depth": 1,
+      "path": "1(d)",
+      "label": "(d)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Military service” is defined in 50 U.S.C. 3911(2).",
+      "depth": 1,
+      "path": "1(e)",
+      "label": "(e)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "“Servicemember” means a member of the uniformed services, including:",
+      "depth": 1,
+      "path": "1(f)",
+      "label": "(f)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "the armed forces;",
+      "depth": 2,
+      "path": "1(f)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "the commissioned corps of the National Oceanic and Atmospheric Administration; and",
+      "depth": 2,
+      "path": "1(f)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "the commissioned corps of the Public Health Service.",
+      "depth": 2,
+      "path": "1(f)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Definitions",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The provisions of 10 U.S.C. 101 and Chapter 50 of Title 50 of the United States Code are incorporated by reference throughout this Policy, including subsequent amendments and editions thereof.",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": "Incorporation of Federal Law",
+      "section": "Incorporation of Federal Law",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "To be employed by a public school unit in any position requiring a license to be issued by the Department of Public Instruction and be certified for pay on the State Salary Schedule, an active duty servicemember whose assigned duty station is in North Carolina, or the spouse of the servicemember, must either:",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": "Employment in Public School Units",
+      "section": "Employment in Public School Units",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Qualify and apply for a North Carolina license in accordance with State Board of Education policy; or",
+      "depth": 1,
+      "path": "3(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Employment in Public School Units",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Obtain recognition of a covered license in accordance with the Veterans Auto and Education Improvement Act of 2022, Pub. L. No. 117-332, 136 Stat. 6119.",
+      "depth": 1,
+      "path": "3(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Employment in Public School Units",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "",
+      "depth": 0,
+      "path": "4",
+      "label": "4.",
+      "heading": "Covered Licenses in Other States",
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If a servicemember or the spouse of a servicemember holds a covered license in another state and relocates to North Carolina because the servicemember receives military orders for military service in North Carolina, the covered license shall be recognized in North Carolina for the license areas covered by the license. To obtain recognition, the servicemember or spouse shall submit an application that includes:",
+      "depth": 1,
+      "path": "4(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Proof of the relevant military orders.",
+      "depth": 2,
+      "path": "4(a)(i)",
+      "label": "(i)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If the applicant is the spouse of a servicemember, a copy of the marriage certificate.",
+      "depth": 2,
+      "path": "4(a)(ii)",
+      "label": "(ii)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A notarized affidavit affirming, under penalty of law, that:",
+      "depth": 2,
+      "path": "4(a)(iii)",
+      "label": "(iii)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant is the person described and identified in the application;",
+      "depth": 3,
+      "path": "4(a)(iii)(A)",
+      "label": "(A)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "All statements made in the application are true and correct and complete;",
+      "depth": 3,
+      "path": "4(a)(iii)(B)",
+      "label": "(B)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant has read and understands the requirements to receive a professional educator license in North Carolina and the license areas in which they are entitled to practice under this Policy;",
+      "depth": 3,
+      "path": "4(a)(iii)(C)",
+      "label": "(C)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant certifies that the applicant meets and shall comply with the requirements in Subsection 3(a)(iii)(C); and",
+      "depth": 3,
+      "path": "4(a)(iii)(D)",
+      "label": "(D)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The applicant is in good standing in all States in which the applicant holds or has held a license.",
+      "depth": 3,
+      "path": "4(a)(iii)(E)",
+      "label": "(E)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "The Department of Public Instruction shall continue to recognize the out-of-state license until the expiration of the military orders or June 30 of the fiscal year in which the orders expire, whichever is later. To continue working as a licensed professional educator after such date, the servicemember or spouse must qualify and apply for a North Carolina professional educator license in accordance with SBE policy.",
+      "depth": 1,
+      "path": "4(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Notwithstanding any other rule to the contrary, if a servicemember or the spouse of a servicemember submits out-of-state exam scores as part of an application for a North Carolina license, those scores need not be from the same jurisdiction in which the applicant completed an EPP or APP.",
+      "depth": 1,
+      "path": "4(c)",
+      "label": "(c)",
+      "heading": null,
+      "section": "Covered Licenses in Other States",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "If a servicemember is called to active duty or issued military orders to relocate to a jurisdiction outside of North Carolina during a time that the servicemember or the spouse of the servicemember is pursuing a residency license under LICN-019 the three-year timeframe for completing an EPP and fulfilling other requirements to obtain an IPL or CPL shall be held in abeyance until the servicemember returns to North Carolina and the servicemember or spouse returns to employment in a North Carolina public school.",
+      "depth": 0,
+      "path": "5",
+      "label": "5.",
+      "heading": "Residency License",
+      "section": "Residency License",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Notwithstanding G.S. 115C-270.20(4a), if a servicemember or the spouse of a servicemember who holds a limited license and is employed by a local board of education relocates to another part of North Carolina pursuant to military orders and obtains employment with a different local board of education, the limited license shall remain valid for the new employment assignment.",
+      "depth": 0,
+      "path": "6",
+      "label": "6.",
+      "heading": "Limited License",
+      "section": "Limited License",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-001)",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-001) Revised :"
+  },
+  "warnings": []
+}

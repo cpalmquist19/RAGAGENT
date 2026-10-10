@@ -1,0 +1,112 @@
+{
+  "code": "LICN-032",
+  "title": "License Renewal for Student Services Personnel",
+  "series": "Licensure (LICN)",
+  "status": "ADOPTED",
+  "effective_date": "2026-07-01",
+  "original_adopted": "2026-01-01",
+  "last_revised": "2026-07-01",
+  "last_reviewed": "2026-07-01",
+  "statutory_citations": [
+    "G.S. 115C-12(9)",
+    "G.S. 115C-270.5",
+    "G.S. 115C-270.20",
+    "G.S. 115C-270.30",
+    "G.S. 115C-333",
+    "G.S. 115C-333.1"
+  ],
+  "ncac_citations": [
+    "16 NCAC 06C .0361"
+  ],
+  "source_url": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=10399&revid=YE6cSFzk7Nzjb2B0LdlnEw==&ptid=muNUlKiR2jsXcslsh28JpBkiw==&secid=&PG=6&IRP=0&isPndg=false",
+  "source_file": "View Policy LICN-032_ License Renewal for Student Services Personnel _ NC State Board of Education.html",
+  "sha256": "729544393fdb94a0d17736de5eb4c9ef7a7ac77ad535de2e9f856b5da9e59d88",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Policy Statement",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "paragraph",
+      "text": "This Policy establishes the requirements for student services personnel to renew a continuing professional license.",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": "Policy Statement",
+      "rows": null
+    },
+    {
+      "kind": "heading",
+      "text": "Policy",
+      "depth": 0,
+      "path": null,
+      "label": null,
+      "heading": null,
+      "section": null,
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Each person holding a student services personnel license must renew that license every five years.",
+      "depth": 0,
+      "path": "1",
+      "label": "1.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Student services personnel must complete eight CEUs during each renewal cycle consisting of the following:",
+      "depth": 0,
+      "path": "2",
+      "label": "2.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Four CEUs that align with the North Carolina standards for the relevant professional discipline, as outlined in the State Board of Education Policy Series on Qualifications and Evaluation (EVAL).",
+      "depth": 1,
+      "path": "2(a)",
+      "label": "(a)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "Four general CEUs that are germane to the K-12 educational environment.",
+      "depth": 1,
+      "path": "2(b)",
+      "label": "(b)",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    },
+    {
+      "kind": "list_item",
+      "text": "A person serving as a school audiologist or school speech-language pathologist shall be exempt from the continuing education requirements of this Policy so long as the person continues to satisfy the applicable requirements of LICN-012.",
+      "depth": 0,
+      "path": "3",
+      "label": "3.",
+      "heading": null,
+      "section": "Policy",
+      "rows": null
+    }
+  ],
+  "history": {
+    "adopted": "Jul. 1, 2026 (recodified from LICN-005).",
+    "revised": [],
+    "raw": "Policy History Adopted : Jul. 1, 2026 (recodified from LICN-005). Revised :"
+  },
+  "warnings": []
+}
