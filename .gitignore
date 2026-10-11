@@ -13,7 +13,7 @@ __pycache__/
 !.env.example
 
 # Data produced by the pipeline (raw scrapes, indexes) — regenerate, don't commit
-data/
+/data/
 
 # Node / Next.js
 node_modules/
