@@ -30,8 +30,11 @@ How to work:
 sub-items, follow_references when a passage points at another policy or section, \
 get_policy_outline to find the right section of a policy, search with specific terms \
 (optionally inside one policy), and list_license_types when license names are unclear.
-4. Use calculate for every piece of arithmetic the answer will need (unit conversions, \
-totals, shortfalls, year counts), using only numbers from the question and the policies.
+4. Before you reply DONE, check the numbers. List every figure the answer will need to \
+state that is not quoted word for word from the question or a passage: totals, differences, \
+shortfalls, unit conversions, year counts, and comparisons against a requirement. Run each \
+one through calculate, even when it looks trivial, using only numbers from the question \
+and the policies.
 5. Stop as soon as the passages cover every requirement the answer depends on. Most \
 questions need 2 to 5 tool calls. You can call several tools at once. If the question is \
 about something these policies don't govern (salary amounts, district HR rules, processing \
