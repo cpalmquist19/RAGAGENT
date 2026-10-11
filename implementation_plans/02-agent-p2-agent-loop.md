@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Plan** | 02 · agent phase 2 of 3 |
-| **Status** | not started |
+| **Status** | in progress (code done; real-API smoke test pending) |
 | **Depends on** | 01 (research tools) must be `done` |
 | **Estimated size** | 2 new source files (~250 lines), 4 small edits to existing files, 1 new test file (~200 lines) |
 | **API cost** | $0 for tests (they use a fake client). 💲 About $0.01–0.03 for the manual smoke test in step 7. |
@@ -588,12 +588,12 @@ If the agent never calls tools, or loops until `max_turns` every time, don't tun
 
 ## Acceptance checklist
 
-- [ ] `uv run pytest -q`: all tests pass.
-- [ ] `uv run ruff check .` and `uv run ruff format --check .` pass.
-- [ ] `uv run pyright src`: 0 errors.
-- [ ] `uv run licn-eval run --help` lists `agent` and `agent_nocalc`.
-- [ ] `answer/prompt.py`, `answer/schema.py`, `evals/`, `rag/` are unchanged (`git diff --stat`).
-- [ ] Smoke test done (or explicitly skipped by the user), with the two traces and costs in your report.
+- [x] `uv run pytest -q`: all tests pass (104).
+- [x] `uv run ruff check .` and `uv run ruff format --check .` pass.
+- [x] `uv run pyright src`: 0 errors.
+- [x] `uv run licn-eval run --help` lists `agent` and `agent_nocalc`.
+- [x] `answer/prompt.py`, `answer/schema.py`, `evals/`, `rag/` are unchanged (`git diff --stat`).
+- [ ] **Still open:** smoke test done (or explicitly skipped by the user), with the two traces and costs in your report.
 
 ## Commit
 

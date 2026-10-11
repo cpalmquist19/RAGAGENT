@@ -2,7 +2,7 @@
 
 A retrieval-augmented generation (RAG) assistant for North Carolina educator licensure rules. A licensure analyst describes an anonymized educator ("BS in biology, year 2 of a Residency License, hasn't passed the content test") and gets an answer grounded in the State Board of Education's **LICN policy series**. Every claim cites the exact policy subsection it comes from, the assistant asks for missing facts instead of guessing, and it says when the policies don't cover a question.
 
-> **Status:** in active development. The corpus pipeline, evaluation set and harness, long-context benchmark, and hybrid RAG pipeline are complete and evaluated. Agentic retrieval is next. See [Roadmap](#roadmap).
+> **Status:** in active development. The corpus pipeline, evaluation set and harness, long-context benchmark, and hybrid RAG pipeline are complete and evaluated. The agentic retrieval pipeline is built and unit-tested; its first real-API smoke test and evaluation are next. See [Roadmap](#roadmap).
 
 ## Why this is harder than "chat with your PDFs"
 
@@ -23,6 +23,7 @@ Saved policy pages ──► HTML parser ──► structured corpus (24 policie
               Answering pipelines                         Evaluation set
               • long-context benchmark                    • 220 analyst-style questions
               • hybrid RAG (production path)              • answer keys generated from the full corpus
+              • agentic retrieval (not yet measured)
                          │                                        │
                          └──────────► structured answer ◄─────────┘
                                       verdict · cited claims ·        scored by
@@ -46,6 +47,8 @@ Every pipeline returns the same structured answer (`AppAnswer`): a verdict (`yes
 
 ### 3. Retrieval
 Chunks follow the policy structure: a section and its sub-items stay together up to about 300 words, oversized sections split along their numbering, and the 96-row exam table splits by license group with its header repeated (113 chunks, every passage covered). Each chunk gets an LLM-written context note (Anthropic's *contextual retrieval*) before indexing. Retrieval is hybrid: **Qwen3-Embedding-0.6B** vectors in **sqlite-vec** and **FTS5 BM25**, merged with reciprocal rank fusion, all in a single SQLite file. Both models run locally on CPU, in float32, since bfloat16 was about 6x slower on CPUs without native bf16 support.
+
+**Agentic retrieval** (built, not yet measured). The `agent` pipeline starts with the same hybrid search on the question (12 chunks), then lets Claude Haiku 5.5 research for up to 8 tool-use turns with six tools: `search` (optionally inside one policy), `get_policy_outline`, `get_section`, `follow_references` (reads the sections a passage points at and lists passages elsewhere that cite its policy), `list_license_types`, and `calculate` (exact arithmetic for CEU and credit conversions). A cap on the policy text collected is enforced in code. The answer step is then the same structured-answer call the RAG pipeline makes, over every passage the tools showed, so the comparison with RAG changes only which passages the model sees. `licn-ask --trace` prints each tool call.
 
 ### 4. Evaluation
 - **Questions:** 220 analyst-style questions in six categories: lookup, eligibility, renewal math, missing facts, unanswerable, and temporal (time-dependent).
@@ -73,7 +76,7 @@ All runs: 220 questions, Claude Haiku 5.5 for answering and judging. The **long-
 | Asks for missing facts when needed | 100% | 99% | 100% |
 | Cost / median latency per question | $0.0018 / 12s | $0.0019 / 10s | $0.0024 / 11s |
 
-**What this shows:** single-shot RAG usually gets the bottom line right (97–99% correct-or-partial) but misses supporting details. Licensure answers are multi-hop. The median answer key draws on **5 different policies** (for example, out-of-state rules, the license types they lead to, definitions, and exam tables), and one search on the question text reliably finds only the main one. Closing this gap is the next phase: **agentic retrieval**, where the model searches iteratively, looks up specific policies, and follows cross-references.
+**What this shows:** single-shot RAG usually gets the bottom line right (97–99% correct-or-partial) but misses supporting details. Licensure answers are multi-hop. The median answer key draws on **5 different policies** (for example, out-of-state rules, the license types they lead to, definitions, and exam tables), and one search on the question text reliably finds only the main one. Closing this gap is the goal of **agentic retrieval**, where the model searches iteratively, looks up specific policies, and follows cross-references. That pipeline is built but not yet evaluated, so no agent numbers are reported here yet.
 
 ### Retrieval ablation
 
@@ -108,6 +111,9 @@ uv run licn-index search "CEUs to renew a K-5 CPL"
 uv run licn-ask "Teacher has 6.5 CEUs this cycle on a CPL and teaches 4th grade. Enough to renew?"
 uv run licn-ask --sources "..."   # also print the text of every cited passage
 
+# Agentic retrieval: the model researches with tools first (--trace prints each tool call)
+uv run licn-ask --pipeline agent --trace "..."
+
 # Evaluate
 uv run licn-eval retrieval                        # retrieval-only ablation (free)
 uv run licn-eval run --pipeline rag --sample 30   # end-to-end, scored by the judge
@@ -128,13 +134,15 @@ src/licn_rag/
   corpus.py      corpus loading, citation IDs, citation normalization and lookup
   answer/        shared answer schema and prompt
   rag/           chunking, contextual notes, SQLite vector + BM25 index (licn-index)
-  pipelines/     answering pipelines: RAG variants and the long-context benchmark
+  agent/         research tools for agentic retrieval: search, outline, sections, references, calculator
+  pipelines/     answering pipelines: RAG variants, the long-context benchmark, and the agent
   evals/         answer-key generation (licn-silver), scoring, and runner (licn-eval)
   ask.py         command-line Q&A (licn-ask)
 corpus/licn/     parsed LICN policies (JSON + Markdown) and manifest
 evals/data/      eval questions and answer keys
 evals/runs/      saved evaluation runs
-tests/           parser and scoring tests
+tests/           parser, scoring, and agent tests
+implementation_plans/  step-by-step build plans for the agentic retrieval work
 GAME_PLAN.md     research notes and full project plan
 ```
 
@@ -156,9 +164,21 @@ GAME_PLAN.md     research notes and full project plan
 - [x] Hybrid RAG: structure-aware chunks with contextual notes, dense + BM25 retrieval, reciprocal rank fusion
 - [x] Retrieval ablation and end-to-end comparison with the benchmark
 - [ ] **Agentic retrieval:** iterative search, exact policy lookup, cross-reference following, a calculator for credit math
+  - [x] Research tools: search, outline, section reads, cross-references, license types, calculator
+  - [x] Tool-use loop pipeline (`agent`, plus `agent_nocalc` for the calculator ablation)
+  - [ ] Smoke test against the real API
+  - [ ] Evaluation against RAG and the long-context benchmark, then decide whether it becomes the production pipeline
 - [ ] Citation verification pass before answers are returned
 - [ ] Web app (Next.js + FastAPI) with click-through citations
 - [ ] Deployment on Google Cloud Run (Terraform), with CI running the evaluation suite
+
+### Next steps
+
+1. **Smoke test the agent** on two real questions (about $0.01–0.03). Check that it calls tools, stops on its own, and cites sensibly.
+2. **Evaluate it** ([plan 03](implementation_plans/03-agent-p3-evaluation.md)): add a free context-recall metric, run the agent against RAG on a 30-question sample, then on all 220 questions, and run the calculator ablation. Estimated total is about $2.50–4.00, and each run is approved before it starts.
+3. **Decide from the numbers** whether the agent replaces RAG as the production pipeline, then write the follow-on plans: citation verifier, eligibility worksheet format, API, web app, deployment, CI.
+
+The plans live in [implementation_plans/](implementation_plans/README.md).
 
 ## Disclaimer
 

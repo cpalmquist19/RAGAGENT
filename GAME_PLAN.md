@@ -1,6 +1,6 @@
 # Licensure RAG Assistant: Research Summary & Game Plan
 
-*Prepared October 10, 2026 · Revision 4 (end of day 1): updated with what was built and measured. Corpus collected by saving pages from a browser (not scraped), answer keys and benchmark complete, hybrid RAG evaluated, reranker dropped, agentic retrieval next. See [§0 Status](#0-status-as-of-october-10-2026).*
+*Prepared October 10, 2026 · Revision 5 (October 11): the agentic retrieval pipeline is built and unit-tested (implementation plans 01–02); its real-API smoke test and evaluation are next. Revision 4 (end of day 1) recorded what was built and measured: corpus collected by saving pages from a browser (not scraped), answer keys and benchmark complete, hybrid RAG evaluated, reranker dropped. See [§0 Status](#0-status-as-of-october-11-2026).*
 
 **Decisions locked in:**
 - **Hosting:** GCP Cloud Run on the always-free tier, managed with Terraform (not built yet)
@@ -21,7 +21,7 @@
 
 ---
 
-## 0. Status (as of October 10, 2026)
+## 0. Status (as of October 11, 2026)
 
 | Area | State |
 |---|---|
@@ -30,8 +30,13 @@
 | Eval harness | ✅ `licn-eval`: deterministic citation/verdict metrics + LLM judge; `licn-eval retrieval` scores retrieval alone at no cost |
 | Long-context benchmark | ✅ 56% correct, 100% correct-or-partial (Haiku 5.5, 220 questions) |
 | Hybrid RAG | ✅ 37% correct, 99% correct-or-partial at 20 chunks. Single-shot retrieval misses supporting policies (median answer key spans 5 policies). |
-| Agentic retrieval | ⏭ next |
+| Agentic retrieval | 🔨 Built and unit-tested (plans 01–02): six research tools, a bounded tool-use loop, `agent` and `agent_nocalc` pipelines, `licn-ask --trace`. **Not yet run against the real API or evaluated** (plan 03). |
 | Web UI, API, cloud, CI | not started |
+
+**Next steps** (build plans are in [implementation_plans/](implementation_plans/README.md)):
+1. **Smoke test the agent** on two real questions (about $0.01–0.03). This is the last open step of plan 02.
+2. **Evaluate it** (plan 03): add a free context-recall metric and a `licn-eval context` command, run `agent` against `rag` on the same 30-question sample, then all 220 questions, then the `agent_nocalc` ablation on renewal-math and eligibility questions. Estimated $2.50–4.00 in total, each run approved first.
+3. **Decide from the numbers** whether the agent becomes the production pipeline, then write the follow-on plans: citation verifier, eligibility worksheet format, API, frontend, infra, CI.
 
 **What the measurements changed:**
 - **The reranker was dropped.** `mxbai-rerank-xsmall-v1` lowered Recall@8 from 48% to 42% and added about 7s per query on CPU.
@@ -211,7 +216,7 @@ Prompt caching helps a lot here: the system prompt, tool definitions, and freque
 ## 5. Target architecture
 
 ```
-  Legend: ✅ built   ⏭ next (Phase 2)   ○ later
+  Legend: ✅ built   🔨 built, not yet measured   ⏭ next (Phase 2)   ○ later
 
   INGESTION (manual trigger, offline)
   ✅ pages saved from a browser ──► licn-ingest: parse ──► corpus/licn/*.json (+ .md, manifest with hashes)
@@ -225,15 +230,18 @@ Prompt caching helps a lot here: the system prompt, tool definitions, and freque
 
   QUERY (online)
   ✅ today:   question ──► hybrid search (dense + BM25 → RRF → top 20) ──► Haiku, structured answer
-  ⏭ Phase 2: question ──► PII check ──► Claude agent loop (Haiku 5.5, max ~6 tool calls)
-        ├─ lookup_policy("LICN-001")            exact fetch, no embedding guesswork
-        ├─ search(query, filters)               the hybrid search above
-        ├─ get_section(id, with_children=True)  read the whole section, not a fragment
+  🔨 `agent` pipeline: question ──► seed search (hybrid, 12 chunks) ──► research loop
+        (Haiku 5.5, max 8 turns, tools stop reading at 6,000 words of policy text)
+        ├─ search(query, policy?)               the hybrid search above, optionally inside one policy
+        ├─ get_policy_outline(code)             a policy's sections with citation IDs and word counts
+        ├─ get_section(id)                      read a whole section with its sub-items (a bare code reads a short policy)
+        ├─ follow_references(id)                read what a passage points at; list passages that cite its policy
         ├─ list_license_types()                 the license catalog, so it reasons over the right options
         └─ calculate(expression)                credits, years, deadlines computed in code
         │
-        ▼
-  Structured answer: facts used • assumptions/missing facts • requirement rows (each cited) • bottom line
+        ▼  every passage the tools showed, in document order
+  ✅ Structured answer (same call and prompt as RAG): verdict • cited claims • questions for the analyst • not covered
+  ⏭ Phase 2, still to build: PII check before the loop • worksheet format (facts used, requirement rows)
         │
         ▼
   Verifier (Haiku): does each cited passage support its row/sentence? If not: flag, or regenerate once
@@ -288,6 +296,7 @@ These points make a good security section in the README.
 6. **Verification pass** to catch citations that don't support their claims.
 7. **Time-awareness.** Answers use current adopted text by default, pending revisions are flagged rather than mixed in, and the "as of" date is always shown.
 8. **Model-agnostic core.** Retrieval, chunking, evals, and the answer schema don't depend on Claude. A local-model adapter (for example LM Studio) could be added and compared with the same evals.
+9. **Research and answer are separate calls.** The agent's tool loop only gathers passages; the answer is then the same structured-output call RAG makes. That keeps the comparison with RAG about retrieval alone, and keeps tool use and structured output in separate requests.
 
 ---
 
@@ -300,7 +309,7 @@ These points make a good security section in the README.
 | API | FastAPI with streaming answers; Pydantic v2 models at every boundary |
 | Storage | **SQLite + sqlite-vec + FTS5**: a single index file, versioned in Cloud Storage. It sits behind a `Retriever` interface, so Postgres + pgvector can be swapped in if the corpus grows. |
 | ML | `sentence-transformers` + CPU PyTorch, models pinned to float32 (Qwen3-Embedding-0.6B). ONNX Runtime is an option for a smaller container. |
-| LLM | `anthropic` SDK (1.x): Messages API, structured outputs, prompt caching; tool use in Phase 2 |
+| LLM | `anthropic` SDK (1.x): Messages API, structured outputs, prompt caching, tool use (agent pipeline) |
 | Frontend | **Next.js (App Router) + TypeScript + Tailwind**, mobile-first; **Auth.js** with Google sign-in and an email allowlist; streams answers from the API |
 | Agent loop | Thin custom code (no LangChain). A few hundred readable lines, easier to debug and to explain in interviews. |
 | Evals | Custom harness (`licn-eval`): deterministic metrics + Haiku LLM judge; runs stored under `evals/runs/` |
@@ -349,7 +358,7 @@ Planned mix (actual after re-labeling: eligibility 82, unanswerable 50, missing 
 
 **Ablation table** (in the README). Run the same eval set through each pipeline and report the gains. Done so far: BM25 → dense → hybrid → + context notes → ± reranker → k=12 vs k=20, plus the long-context benchmark. Still to come:
 
-`+ agent tools` → `+ calculator` → `+ verifier`
+`+ agent tools` → `+ calculator` → `+ verifier`. The first two come from plan 03's `agent` and `agent_nocalc` runs; the pipelines exist, the numbers don't yet.
 
 Also run **Haiku vs. Sonnet vs. a local model** on the same evals. "I measured each technique and model on a real policy corpus and chose the cheapest configuration that met the bar" is a strong interview story.
 
@@ -384,12 +393,14 @@ Also run **Haiku vs. Sonnet vs. a local model** on the same evals. "I measured e
 - [x] Retrieval evals (Recall@k, MRR) and the first rows of the ablation table
 - [x] Measure total corpus tokens (about 47k) and build the long-context benchmark
 - [x] End-to-end evals: benchmark vs RAG (k=12, k=20)
-- [ ] Header citations → `citation_graph` table (moves to Phase 2 for cross-reference following)
+- [ ] Header citations → `citation_graph` table. In-text cross-references between LICN passages are now extracted in memory (`agent/references.py`, plan 01); the statutory/NCAC header citations are still not a table.
 - [ ] Package ingestion as a **Cloud Run Job** that publishes `index-<date>.sqlite` to GCS (Phase 4)
 
 ### Phase 2: Agent & eligibility reasoning ⏭ next
 - [ ] **Goal: close the gap between RAG (37% correct) and the long-context benchmark (56%)** without giving up retrieval
-- [ ] Tools: `lookup_policy`, `search`, `get_section`, `follow_references`, `list_license_types`, `calculate`
+- [x] Tools (plan 01): `search`, `get_policy_outline`, `get_section` (a bare policy code reads a short policy, which replaces a separate `lookup_policy`), `follow_references`, `list_license_types`, `calculate`
+- [x] Tool-use loop pipeline `agent` plus `agent_nocalc` ablation, and `licn-ask --trace` (plan 02). Smoke test against the real API still to run.
+- [ ] Evaluate the agent against RAG and the benchmark: context recall, correctness, cost, latency (plan 03)
 - [ ] Worksheet output schema + strict citation contract + missing-fact questions + abstention
 - [ ] Verifier pass; eligibility, citation, and abstention metrics
 - [ ] PII check; OpenTelemetry tracing; per-question cost logging to Firestore; a CLI for quick testing

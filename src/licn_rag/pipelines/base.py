@@ -26,6 +26,12 @@ class PipelineResult:
     context_ids: list[str] | None = None
     """Citation IDs of the passages the model saw; None means the full corpus."""
     usage: dict[str, Any] = field(default_factory=dict)
+    trace: list[dict[str, Any]] | None = None
+    """Agent pipelines: every tool call in order (tool, input, added_words, error)."""
+    research: dict[str, Any] | None = None
+    """Agent pipelines: research turns, why research stopped, and calculator results."""
+    context_words: int | None = None
+    """Words of policy text shown to the answering model; None if not measured."""
 
 
 class Pipeline(Protocol):
