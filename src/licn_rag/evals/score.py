@@ -37,6 +37,28 @@ def ratio(hit: int, total: int) -> float | None:
     return hit / total if total else None
 
 
+def key_sections(key: dict[str, Any]) -> set[str]:
+    """Sections the answer key cites, in its expected citations and its key points."""
+    cites = set(key["expected_citations"]) | {
+        c for kp in key["key_points"] for c in kp["citations"]
+    }
+    return {section_of(c) for c in cites}
+
+
+def context_recall(context_ids: list[str] | None, key: dict[str, Any]) -> float | None:
+    """Share of the key's sections that were in the answering model's context.
+
+    None when the whole corpus was in context (context_ids is None) or the question is
+    out of scope. Same definition as `licn-eval retrieval`'s Recall@k, so the numbers are
+    comparable.
+    """
+    if context_ids is None or key["answerable"] == "no":
+        return None
+    return ratio(
+        len(key_sections(key) & {section_of(c) for c in context_ids}), len(key_sections(key))
+    )
+
+
 def deterministic(answer: AppAnswer, key: dict[str, Any], corpus: Corpus) -> dict[str, Any]:
     raw = answer.citations()
     normalized = [corpus.normalize(c) for c in raw]

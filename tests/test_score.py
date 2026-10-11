@@ -6,7 +6,7 @@ import pytest
 
 from licn_rag.answer.schema import AppAnswer, Claim
 from licn_rag.corpus import Corpus
-from licn_rag.evals.score import deterministic, section_of
+from licn_rag.evals.score import context_recall, deterministic, section_of
 from licn_rag.llm import output_schema
 
 
@@ -56,6 +56,14 @@ def test_section_level_citation_overlap(corpus: Corpus) -> None:
     assert m["section_precision"] == 1.0
     assert m["policy_recall"] == 0.5
     assert m["invalid_citations"] == []
+
+
+def test_context_recall() -> None:
+    assert context_recall(["LICN-030 §1(b)", "LICN-019 §2"], key()) == 0.5
+    assert context_recall(["LICN-030 §1", "LICN-001 §2(w)"], key()) == 1.0
+    assert context_recall([], key()) == 0.0
+    assert context_recall(None, key()) is None  # full corpus in context
+    assert context_recall(["LICN-030 §1"], key(answerable="no")) is None
 
 
 def test_invalid_citation_detected(corpus: Corpus) -> None:

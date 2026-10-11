@@ -98,7 +98,9 @@ class RagPipeline:
         chunks = self.retrieve(question)
         context_ids = list(dict.fromkeys(i for c in chunks for i in c.cite_ids))
         system = build_system("retrieved", render_passages(chunks, self.corpus))
-        return generate(self.client, self.model, system, question, self.effort, context_ids)
+        result = generate(self.client, self.model, system, question, self.effort, context_ids)
+        result.context_words = sum(len(c.text.split()) for c in chunks)
+        return result
 
 
 VARIANTS: dict[str, RetrievalConfig] = {

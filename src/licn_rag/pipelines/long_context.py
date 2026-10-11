@@ -20,7 +20,11 @@ class LongContextPipeline:
         self.client = client
         self.model = model
         self.effort: Effort = effort
-        self.system = build_system("full_corpus", corpus.render())
+        rendered = corpus.render()
+        self.context_words = len(rendered.split())
+        self.system = build_system("full_corpus", rendered)
 
     def answer(self, question: str) -> PipelineResult:
-        return generate(self.client, self.model, self.system, question, self.effort, None)
+        result = generate(self.client, self.model, self.system, question, self.effort, None)
+        result.context_words = self.context_words
+        return result

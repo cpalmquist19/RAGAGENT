@@ -3,6 +3,7 @@
     uv run licn-eval run --pipeline long_context --sample 30   # quick stratified sample
     uv run licn-eval run --pipeline long_context               # all 220 questions
     uv run licn-eval report evals/runs/<run-a> evals/runs/<run-b>
+    uv run licn-eval context evals/runs/<run-a>                # context recall, free
 
 Each run writes evals/runs/<timestamp>-<pipeline>/results.jsonl (one scored answer per
 question) and summary.json (aggregate metrics, overall and per question type).
@@ -24,7 +25,7 @@ from typing import Any
 import anthropic
 
 from licn_rag.corpus import Corpus
-from licn_rag.evals.score import deterministic, judge, section_of
+from licn_rag.evals.score import context_recall, deterministic, judge, section_of
 from licn_rag.llm import make_client, verify_workspace
 from licn_rag.pipelines.base import Pipeline
 from licn_rag.pipelines.rag import VARIANTS, RagPipeline
@@ -46,6 +47,7 @@ METRICS = [
     ("unsupported_claims", "Answers with an unsupported claim", "any"),
     ("contradicted_key_points", "Answers contradicting the key", "any"),
     ("verdict_match", "Verdict matches key", "rate"),
+    ("context_recall", "Key sections in the model's context", "rate"),
     ("section_recall", "Section recall", "rate"),
     ("section_precision", "Section precision", "rate"),
     ("policy_recall", "Policy recall", "rate"),
@@ -108,10 +110,14 @@ def score_one(
         "latency_s": round(result.latency_s, 2),
         "context_ids": result.context_ids,
     }
+    for field in ("context_words", "research", "trace"):
+        if (value := getattr(result, field)) is not None:
+            record[field] = value
     if result.answer is None:
         return record | {"error": result.error}
     record["answer"] = result.answer.model_dump()
     metrics = deterministic(result.answer, key, corpus)
+    metrics["context_recall"] = context_recall(result.context_ids, key)
     metrics["has_invalid_citation"] = bool(metrics["invalid_citations"])
     if judge_model:
         try:
@@ -145,6 +151,8 @@ def aggregate(records: list[dict[str, Any]]) -> dict[str, Any]:
         return out
 
     latencies = sorted(r["latency_s"] for r in scored)
+    words = [r["context_words"] for r in scored if r.get("context_words") is not None]
+    traced = [r for r in scored if "trace" in r]  # agent runs; they always carry "research"
     by_type: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for r in scored:
         by_type[r["type"]].append(r)
@@ -158,7 +166,31 @@ def aggregate(records: list[dict[str, Any]]) -> dict[str, Any]:
         "pipeline_cost_total": round(sum(r.get("cost_usd", 0) for r in records), 4),
         "latency_p50_s": round(statistics.median(latencies), 2) if latencies else None,
         "latency_p95_s": round(latencies[int(0.95 * (n - 1))], 2) if latencies else None,
+        "context_words_p50": round(statistics.median(words)) if words else None,
+        "tool_calls_mean": (
+            round(
+                statistics.mean(
+                    sum(t["tool"] != "seed_search" for t in r["trace"]) for r in traced
+                ),
+                2,
+            )
+            if traced
+            else None
+        ),
+        "research_turns_mean": (
+            round(statistics.mean(r["research"]["turns"] for r in traced), 2) if traced else None
+        ),
+        "stopped_at_turn_limit": (
+            sum(r["research"]["stop"] == "max_turns" for r in traced) if traced else None
+        ),
+        "tool_errors": (sum(t["error"] for r in traced for t in r["trace"]) if traced else None),
     }
+
+
+def cell(s: dict[str, Any], key: str, fmt: str = "{}") -> str:
+    """A summary value for the report table; old summaries lack the newer keys."""
+    v = s.get(key)
+    return "–" if v is None else fmt.format(v)
 
 
 def print_report(runs: list[tuple[str, dict[str, Any]]]) -> None:
@@ -179,15 +211,28 @@ def print_report(runs: list[tuple[str, dict[str, Any]]]) -> None:
         row(label, cells)
     row("cost / question (pipeline)", [f"${s['cost_per_question']:.4f}" for _, s in runs])
     row("latency p50 / p95", [f"{s['latency_p50_s']}s / {s['latency_p95_s']}s" for _, s in runs])
+    row("context words (median)", [cell(s, "context_words_p50", "{:,}") for _, s in runs])
+    row("tool calls / question (agent)", [cell(s, "tool_calls_mean") for _, s in runs])
+    row("research turns / question (agent)", [cell(s, "research_turns_mean") for _, s in runs])
+    row("stopped at turn limit (agent)", [cell(s, "stopped_at_turn_limit") for _, s in runs])
     row("errors", [str(len(s["errors"])) for _, s in runs])
 
     if len(runs) == 1:
         _, s = runs[0]
-        print("\nby question type (correct · key-point coverage · verdict match · section recall):")
+        print(
+            "\nby question type (correct · key-point coverage · verdict match · section recall"
+            " · context recall):"
+        )
         for t, m in s["by_type"].items():
             parts = [
                 f"{m.get(k, 0):.0%}" if k in m else "–"
-                for k in ("correct", "key_point_coverage", "verdict_match", "section_recall")
+                for k in (
+                    "correct",
+                    "key_point_coverage",
+                    "verdict_match",
+                    "section_recall",
+                    "context_recall",
+                )
             ]
             print(f"  {t:15} n={m['n']:<4} " + " · ".join(parts))
 
@@ -199,6 +244,7 @@ def cmd_run(args: argparse.Namespace) -> None:
     client = make_client().with_options(max_retries=6)
     verify_workspace(client, args.model)  # fails fast if .env points at another workspace
     pipeline = PIPELINES[args.pipeline](client, args.model, corpus)
+    pipeline_config = getattr(pipeline, "config", None)
     judge_model = None if args.no_judge else args.judge_model
 
     run_dir = RUNS_DIR / f"{datetime.now():%Y%m%d-%H%M%S}-{args.pipeline}"
@@ -209,6 +255,11 @@ def cmd_run(args: argparse.Namespace) -> None:
         "judge_model": judge_model,
         "questions": len(questions),
         "started": datetime.now().isoformat(timespec="seconds"),
+        "pipeline_config": (
+            dataclasses.asdict(pipeline_config)
+            if dataclasses.is_dataclass(pipeline_config) and not isinstance(pipeline_config, type)
+            else None
+        ),
     }
     (run_dir / "config.json").write_text(json.dumps(config, indent=2), encoding="utf-8")
     print(
@@ -304,6 +355,24 @@ def cmd_report(args: argparse.Namespace) -> None:
     print_report(runs)
 
 
+def cmd_context(args: argparse.Namespace) -> None:
+    """Context recall of saved runs, recomputed from their context_ids (no LLM calls)."""
+    keys = {r["id"]: r["answer"] for r in read_jsonl(ANSWER_KEYS) if "answer" in r}
+    print(f"{'run':40}{'context recall':>16}{'n':>6}{'context words p50':>20}")
+    for d in map(Path, args.runs):
+        rows = read_jsonl(d / "results.jsonl")
+        recalls = [
+            v
+            for r in rows
+            if r["id"] in keys
+            and (v := context_recall(r.get("context_ids"), keys[r["id"]])) is not None
+        ]
+        words = [r["context_words"] for r in rows if r.get("context_words") is not None]
+        recall = f"{statistics.mean(recalls):.0%}" if recalls else "–"
+        median_words = f"{statistics.median(words):,.0f}" if words else "–"
+        print(f"{d.name:40}{recall:>16}{len(recalls):>6}{median_words:>20}")
+
+
 def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[union-attr]
@@ -327,9 +396,13 @@ def main(argv: list[str] | None = None) -> int:
     rt.add_argument("--types", nargs="+")
     p = sub.add_parser("report")
     p.add_argument("runs", nargs="+", help="run directories to compare")
+    c = sub.add_parser("context", help="context recall of saved runs (free)")
+    c.add_argument("runs", nargs="+", help="run directories")
     args = ap.parse_args(argv)
     try:
-        {"run": cmd_run, "report": cmd_report, "retrieval": cmd_retrieval}[args.cmd](args)
+        {"run": cmd_run, "report": cmd_report, "retrieval": cmd_retrieval, "context": cmd_context}[
+            args.cmd
+        ](args)
     except anthropic.AuthenticationError:
         print("authentication failed: check ANTHROPIC_API_KEY in .env", file=sys.stderr)
         return 1
