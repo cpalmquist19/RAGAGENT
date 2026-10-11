@@ -65,7 +65,9 @@ Add two functions after `ratio`:
 ```python
 def key_sections(key: dict[str, Any]) -> set[str]:
     """Sections the answer key cites, in its expected citations and its key points."""
-    cites = set(key["expected_citations"]) | {c for kp in key["key_points"] for c in kp["citations"]}
+    cites = set(key["expected_citations"]) | {
+        c for kp in key["key_points"] for c in kp["citations"]
+    }
     return {section_of(c) for c in cites}
 
 
@@ -78,7 +80,9 @@ def context_recall(context_ids: list[str] | None, key: dict[str, Any]) -> float 
     """
     if context_ids is None or key["answerable"] == "no":
         return None
-    return ratio(len(key_sections(key) & {section_of(c) for c in context_ids}), len(key_sections(key)))
+    return ratio(
+        len(key_sections(key) & {section_of(c) for c in context_ids}), len(key_sections(key))
+    )
 ```
 
 Don't change `deterministic()`.
@@ -90,7 +94,7 @@ def test_context_recall() -> None:
     assert context_recall(["LICN-030 §1(b)", "LICN-019 §2"], key()) == 0.5
     assert context_recall(["LICN-030 §1", "LICN-001 §2(w)"], key()) == 1.0
     assert context_recall([], key()) == 0.0
-    assert context_recall(None, key()) is None                   # full corpus in context
+    assert context_recall(None, key()) is None  # full corpus in context
     assert context_recall(["LICN-030 §1"], key(answerable="no")) is None
 ```
 
@@ -116,7 +120,7 @@ The agent pipeline already sets `context_words` (plan 02).
 **3a. `METRICS`**: insert a row directly before `section_recall`:
 
 ```python
-    ("context_recall", "Key sections in the model's context", "rate"),
+(("context_recall", "Key sections in the model's context", "rate"),)
 ```
 
 **3b. `score_one`**: after `record |= {"model": ..., "context_ids": ...}`, add the new fields when present:
@@ -205,8 +209,13 @@ from licn_rag.evals.runner import aggregate, print_report
 
 
 def record(**extra: Any) -> dict[str, Any]:
-    base = {"id": "q1", "type": "eligibility", "cost_usd": 0.004, "latency_s": 12.0,
-            "metrics": {"correct": True, "context_recall": 0.5}}
+    base = {
+        "id": "q1",
+        "type": "eligibility",
+        "cost_usd": 0.004,
+        "latency_s": 12.0,
+        "metrics": {"correct": True, "context_recall": 0.5},
+    }
     return base | extra
 ```
 
@@ -232,7 +241,8 @@ def cmd_context(args: argparse.Namespace) -> None:
     for d in map(Path, args.runs):
         rows = read_jsonl(d / "results.jsonl")
         recalls = [
-            v for r in rows
+            v
+            for r in rows
             if r["id"] in keys
             and (v := context_recall(r.get("context_ids"), keys[r["id"]])) is not None
         ]

@@ -5,6 +5,7 @@ uv run licn-ask --sources "..."     # also print the text of every cited passage
 """
 
 import argparse
+import json
 import sys
 import textwrap
 
@@ -23,6 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--pipeline", choices=sorted(PIPELINES), default="rag")
     ap.add_argument("--model", default="claude-haiku-5-5")
     ap.add_argument("--sources", action="store_true", help="print cited passage text")
+    ap.add_argument("--trace", action="store_true", help="print the agent's tool calls")
     args = ap.parse_args(argv)
 
     corpus = Corpus.load()
@@ -48,7 +50,17 @@ def main(argv: list[str] | None = None) -> int:
         print("\nSources:")
         for c in a.citations():
             print(f"\n{corpus.passage(corpus.normalize(c) or c) or f'[{c}] (not found)'}")
-    print(f"\n({result.model} · {result.latency_s:.1f}s · ${result.cost_usd:.4f})")
+    if args.trace and result.trace is not None:
+        r = result.research or {}
+        print(
+            f"\nResearch ({r.get('turns', '?')} turns, stopped: {r.get('stop', '?')}, "
+            f"{result.context_words or 0:,} words of policy text):"
+        )
+        for t in result.trace:
+            status = "ERROR" if t["error"] else f"+{t['added_words']:,} words"
+            args_text = json.dumps(t["input"], ensure_ascii=False)
+            print(f"  {t['tool']:18} {textwrap.shorten(args_text, 60):60} {status}")
+    print(f"\n({result.model} ·{result.latency_s:.1f}s · ${result.cost_usd:.4f})")
     return 0
 
 

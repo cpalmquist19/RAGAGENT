@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Plan** | 02 · agent phase 2 of 3 |
-| **Status** | not started |
+| **Status** | in progress (code done; real-API smoke test pending) |
 | **Depends on** | 01 (research tools) must be `done` |
 | **Estimated size** | 2 new source files (~250 lines), 4 small edits to existing files, 1 new test file (~200 lines) |
 | **API cost** | $0 for tests (they use a fake client). 💲 About $0.01–0.03 for the manual smoke test in step 7. |
