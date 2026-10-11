@@ -46,7 +46,7 @@ Add a new area only when a plan doesn't fit any of these. Add it to this table i
 
 | # | Plan | Area / phase | Status | Depends on |
 |---|---|---|---|---|
-| 01 | [Research tools](01-agent-p1-research-tools.md) | agent p1 | not started | none |
+| 01 | [Research tools](01-agent-p1-research-tools.md) | agent p1 | done | none |
 | 02 | [Agent loop](02-agent-p2-agent-loop.md) | agent p2 | not started | 01 |
 | 03 | [Agent evaluation](03-agent-p3-evaluation.md) | agent p3 | not started | 02 |
 

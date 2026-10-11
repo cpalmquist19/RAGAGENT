@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Plan** | 01 · agent phase 1 of 3 |
-| **Status** | not started |
+| **Status** | done |
 | **Depends on** | none |
 | **Estimated size** | 5 new source files (~550 lines), 3 new test files (~250 lines) |
 | **API cost** | $0. Nothing in this plan calls the Anthropic API. |
@@ -14,10 +14,10 @@ Build the **tools** the research agent will use in plan 02, as plain Python with
 
 ```python
 box = ToolBox(corpus, index)
-box.run("get_section", {"citation_id": "LICN-030 §1"})        # -> ToolOutcome(text=..., is_error=False)
+box.run("get_section", {"citation_id": "LICN-030 §1"})  # -> ToolOutcome(text=..., is_error=False)
 box.run("follow_references", {"citation_id": "LICN-010 §5(c)"})
 box.run("calculate", {"description": "CEUs from 6 semester hours", "expression": "6 * 2/3"})
-box.evidence.render()   # every passage the tools showed, in document order, ready for the answer prompt
+box.evidence.render()  # every passage the tools showed, in document order, ready for the answer prompt
 ```
 
 ## Background (why this exists)
@@ -455,9 +455,7 @@ class ReferenceGraph:
 
     def from_passage(self, citation: str) -> list[Reference]:
         """References made by a passage or any of its sub-items, one per target."""
-        hits = [
-            r for r in self.refs if r.source == citation or r.source.startswith(citation + "(")
-        ]
+        hits = [r for r in self.refs if r.source == citation or r.source.startswith(citation + "(")]
         if "§" not in citation and policy_of(citation) == citation:  # a whole policy
             hits = [r for r in self.refs if policy_of(r.source) == citation]
         return list({r.target: r for r in hits}.values())
@@ -497,12 +495,12 @@ This is the biggest step. The module defines:
 Constants (put them at the top of the module):
 
 ```python
-SEARCH_K = 8                    # chunks per search call
-SEED_K = 12                     # default for the seed search plan 02 runs before the loop
-MAX_SECTION_WORDS = 1500        # get_section returns an outline instead above this
-MAX_WHOLE_POLICY_WORDS = 800    # get_section on a bare policy code ("LICN-020") up to this size
+SEARCH_K = 8  # chunks per search call
+SEED_K = 12  # default for the seed search plan 02 runs before the loop
+MAX_SECTION_WORDS = 1500  # get_section returns an outline instead above this
+MAX_WHOLE_POLICY_WORDS = 800  # get_section on a bare policy code ("LICN-020") up to this size
 OUTLINE_LEAD_WORDS = 15
-MAX_CITING = 10                 # cap on "passages elsewhere that cite this policy"
+MAX_CITING = 10  # cap on "passages elsewhere that cite this policy"
 LICENSE_TERM = re.compile(r'^\s*[“"]([^”"]+)[”"]')
 ```
 
@@ -683,7 +681,11 @@ class ToolBox:
     def definitions(self) -> list[ToolParam]:
         """Tool definitions for the API, sorted by name so the prompt cache stays valid."""
         return [
-            {"name": s.name, "description": s.description, "input_schema": tool_schema(s.input_model)}
+            {
+                "name": s.name,
+                "description": s.description,
+                "input_schema": tool_schema(s.input_model),
+            }
             for s in sorted(self.specs, key=lambda s: s.name)
         ]
 
@@ -708,7 +710,12 @@ class ToolBox:
                 outcome = self._handlers[name](args)
         outcome.added_words = self.evidence.words() - before
         self.trace.append(
-            {"tool": name, "input": raw_input, "added_words": outcome.added_words, "error": outcome.is_error}
+            {
+                "tool": name,
+                "input": raw_input,
+                "added_words": outcome.added_words,
+                "error": outcome.is_error,
+            }
         )
         return outcome
 
@@ -717,8 +724,12 @@ class ToolBox:
         before = self.evidence.words()
         outcome = self._show_chunks(self._search_chunks(question, None, k))
         self.trace.append(
-            {"tool": "seed_search", "input": {"query": question, "k": k},
-             "added_words": self.evidence.words() - before, "error": outcome.is_error}
+            {
+                "tool": "seed_search",
+                "input": {"query": question, "k": k},
+                "added_words": self.evidence.words() - before,
+                "error": outcome.is_error,
+            }
         )
         return outcome.text
 ```
@@ -738,13 +749,17 @@ def _search_chunks(self, query: str, policy: str | None, k: int) -> list[Chunk]:
     hits = self.index.search(query, self.search_mode, n, n)
     return [h.chunk for h in hits if h.chunk.policy_code == policy][:k]
 
+
 def _search(self, args: SearchInput) -> ToolOutcome:
     if self.index is None:
-        return ToolOutcome("Search is unavailable; use get_policy_outline and get_section.", is_error=True)
+        return ToolOutcome(
+            "Search is unavailable; use get_policy_outline and get_section.", is_error=True
+        )
     policy = args.policy.strip().upper() if args.policy else None
     if policy is not None and policy not in self.corpus.by_code:
         return ToolOutcome(f"Unknown policy {args.policy!r}. {self._known_codes()}", is_error=True)
     return self._show_chunks(self._search_chunks(args.query, policy, SEARCH_K))
+
 
 def _show_chunks(self, chunks: list[Chunk]) -> ToolOutcome:
     shown: list[str] = []
@@ -761,6 +776,7 @@ def _show_chunks(self, chunks: list[Chunk]) -> ToolOutcome:
     if already:
         text += f"\n\n({len(already)} more results you have already read: {', '.join(already)})"
     return ToolOutcome(text.strip())
+
 
 def _known_codes(self) -> str:
     return "Available policies: " + ", ".join(self.corpus.by_code)
@@ -841,14 +857,24 @@ if defs:
     blocks: list[Block] = []
     for b in defs.blocks:
         m = LICENSE_TERM.match(b.text)
-        if b.path and re.fullmatch(r"2\([a-z]+\)", b.path) and m and "license" in m.group(1).lower():
+        if (
+            b.path
+            and re.fullmatch(r"2\([a-z]+\)", b.path)
+            and m
+            and "license" in m.group(1).lower()
+        ):
             blocks += blocks_under(defs, cite_id(defs, b))
     self.evidence.add_blocks(defs, blocks)
-    parts.append("License definitions (LICN-001 §2):\n" + "\n".join(block_line(defs, b) for b in blocks))
+    parts.append(
+        "License definitions (LICN-001 §2):\n" + "\n".join(block_line(defs, b) for b in blocks)
+    )
 if types:
     blocks = blocks_under(types, "LICN-010 §5")
     self.evidence.add_blocks(types, blocks)
-    parts.append("Teacher license types and their policies (LICN-010 §5):\n" + "\n".join(block_line(types, b) for b in blocks))
+    parts.append(
+        "Teacher license types and their policies (LICN-010 §5):\n"
+        + "\n".join(block_line(types, b) for b in blocks)
+    )
 return ToolOutcome("\n\n".join(parts) or "No license definitions found.", is_error=not parts)
 ```
 
