@@ -588,12 +588,12 @@ If the agent never calls tools, or loops until `max_turns` every time, don't tun
 
 ## Acceptance checklist
 
-- [ ] `uv run pytest -q`: all tests pass.
-- [ ] `uv run ruff check .` and `uv run ruff format --check .` pass.
-- [ ] `uv run pyright src`: 0 errors.
-- [ ] `uv run licn-eval run --help` lists `agent` and `agent_nocalc`.
-- [ ] `answer/prompt.py`, `answer/schema.py`, `evals/`, `rag/` are unchanged (`git diff --stat`).
-- [ ] Smoke test done (or explicitly skipped by the user), with the two traces and costs in your report.
+- [x] `uv run pytest -q`: all tests pass (104).
+- [x] `uv run ruff check .` and `uv run ruff format --check .` pass.
+- [x] `uv run pyright src`: 0 errors.
+- [x] `uv run licn-eval run --help` lists `agent` and `agent_nocalc`.
+- [x] `answer/prompt.py`, `answer/schema.py`, `evals/`, `rag/` are unchanged (`git diff --stat`).
+- [ ] **Still open:** smoke test done (or explicitly skipped by the user), with the two traces and costs in your report.
 
 ## Commit
 

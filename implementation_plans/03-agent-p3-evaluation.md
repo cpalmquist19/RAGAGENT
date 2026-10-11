@@ -348,20 +348,20 @@ Use the real numbers from step 6. If the agent did worse on some metric, say so 
    - `Tool calls per question`: `–`, `–`, `–`, agent's `tool_calls_mean`.
 2. Replace the "What this shows" paragraph's last two sentences ("Closing this gap is the next phase…") with 2–4 sentences on what the agent run showed: correct rate vs RAG and the benchmark, context recall, cost and latency, and the most common remaining failure you saw in the traces.
 3. Add the ablation result (`agent` vs `agent_nocalc` on renewal math and eligibility) as a sentence or a small table under the results, if 6c was run.
-4. "How it works" section 3 (Retrieval): add a short paragraph describing agentic retrieval: seed search, then a bounded tool loop (name the six tools), then the same answer step over every passage the tools showed.
-5. "Quickstart": add `uv run licn-ask --pipeline agent --trace "..."`.
-6. "Roadmap": tick `Agentic retrieval` (`[x]`). The calculator is included; if 6c showed it didn't help, say so in the results instead of unticking.
-7. The status blockquote at the top: update "Agentic retrieval is next" to reflect the result.
-8. "Repository layout": add `agent/          research tools for agentic retrieval: search, outline, sections, references, calculator`.
+4. "How it works" section 3 (Retrieval): the **Agentic retrieval** paragraph already exists (added with plan 02, marked "built, not yet measured"). Change that marker to reflect the result and add one sentence with the headline number. Don't add a second paragraph.
+5. "Quickstart": the `licn-ask --pipeline agent --trace` example is already there. Add the eval commands you used (`licn-eval run --pipeline agent`, `licn-eval context`) if they aren't.
+6. "Roadmap": tick the parent `Agentic retrieval` item and the "Smoke test" and "Evaluation" sub-items (`[x]`). The calculator is included; if 6c showed it didn't help, say so in the results instead of unticking.
+7. The status blockquote at the top currently says the pipeline is "built and unit-tested; its first real-API smoke test and evaluation are next". Update it to reflect the result. Also update the "Next steps" section at the bottom of the Roadmap: remove the steps that are done and replace them with what the results say comes next.
+8. "Repository layout": the `agent/` line and the `implementation_plans/` line are already there. Nothing to add.
 
 Don't add any mention of human (gold) review of the answer keys to README.md.
 
 **GAME_PLAN.md:**
 
-1. §0 status table: change the `Agentic retrieval` row from `⏭ next` to `✅` with the headline numbers (correct %, context recall, cost per question). Add bullets under "What the measurements changed" for anything the runs taught (for example, whether the calculator helped, typical tool-call count, whether the turn limit was ever hit).
-2. Update the revision line at the top (Revision 5, today's date, one clause on what changed).
+1. §0 status table: change the `Agentic retrieval` row from `🔨 Built and unit-tested … Not yet run against the real API or evaluated` to `✅` with the headline numbers (correct %, context recall, cost per question). Replace the **Next steps** list under the table with what the results say comes next. Add bullets under "What the measurements changed" for anything the runs taught (for example, whether the calculator helped, typical tool-call count, whether the turn limit was ever hit).
+2. Update the revision line at the top (Revision 6, today's date, one clause on what changed), and the `§0 Status` heading date plus the matching anchor link in that line.
 3. §7 ablation paragraph: the "Still to come" list `+ agent tools → + calculator → + verifier` becomes done/remaining accordingly.
-4. §8 Phase 2 checklist: tick the tools item and the "close the gap" item **only if** the agent's correct rate moved meaningfully toward the benchmark; otherwise leave it unticked and add a sub-bullet with the measured result.
+4. §8 Phase 2 checklist: the tools and loop items are already ticked. Tick the "Evaluate the agent" item once the runs are done, and tick the "close the gap" item **only if** the agent's correct rate moved meaningfully toward the benchmark; otherwise leave it unticked and add a sub-bullet with the measured result.
 
 **Check:** README tables render (look at them in a Markdown preview); every number you wrote can be traced to a `summary.json` or `licn-eval context` output you can name in your report.
 
