@@ -95,3 +95,50 @@ def test_output_schema_is_strict() -> None:
     claim = schema["properties"]["claims"]["items"]
     assert claim["additionalProperties"] is False
     assert claim["required"] == ["text", "citations"]
+
+
+def test_parent_context_gives_list_items_their_lead_in(corpus: Corpus) -> None:
+    from licn_rag.evals.score import parent_context
+
+    lines = parent_context(corpus, "LICN-013 §3(b)")
+    assert len(lines) == 1 and lines[0].startswith("[LICN-013 §3] ")
+    assert "shall not add" in lines[0]
+    assert [line[:16] for line in parent_context(corpus, "LICN-019 §1(a)(ii)")] == [
+        "[LICN-019 §1] El",
+        "[LICN-019 §1(a)]",
+    ]
+    assert parent_context(corpus, "LICN-030 §1") == []
+
+
+def _judgment(bottom_line: str, errors: list[str], central: list[str]) -> Any:
+    from licn_rag.evals.score import Judgment, KeyPointGrade
+
+    points = [KeyPointGrade(index=i, central=True, status=s) for i, s in enumerate(central)]  # type: ignore[arg-type]
+    points.append(KeyPointGrade(index=len(points), central=False, status="missing"))
+    return Judgment(
+        key_points=points,
+        claims=[],
+        bottom_line=bottom_line,  # type: ignore[arg-type]
+        material_errors=errors,
+        minor_issues=["peripheral wording"],
+        rationale="",
+    )
+
+
+@pytest.mark.parametrize(
+    ("bottom_line", "errors", "central", "label"),
+    [
+        ("agrees", [], ["covered", "partial"], "correct"),  # a missing peripheral point is fine
+        ("agrees", ["wrong fee"], ["covered"], "partially_correct"),
+        ("agrees", [], ["covered", "missing"], "partially_correct"),
+        ("partly_agrees", [], ["covered"], "partially_correct"),
+        ("agrees", [], ["contradicted"], "incorrect"),
+        ("disagrees", [], ["covered"], "incorrect"),
+    ],
+)
+def test_overall_label_is_computed(
+    bottom_line: str, errors: list[str], central: list[str], label: str
+) -> None:
+    from licn_rag.evals.score import overall_label
+
+    assert overall_label(_judgment(bottom_line, errors, central)) == label

@@ -96,6 +96,8 @@ def deterministic(answer: AppAnswer, key: dict[str, Any], corpus: Corpus) -> dic
 
 class KeyPointGrade(BaseModel):
     index: int
+    central: bool
+    """True if the key's bottom line depends on this point; False for supporting detail."""
     status: Literal["covered", "partial", "missing", "contradicted"]
 
 
@@ -107,37 +109,89 @@ class ClaimGrade(BaseModel):
 class Judgment(BaseModel):
     key_points: list[KeyPointGrade]
     claims: list[ClaimGrade]
-    incorrect_statements: list[str]
-    overall: Literal["correct", "partially_correct", "incorrect"]
+    bottom_line: Literal["agrees", "partly_agrees", "disagrees"]
+    material_errors: list[str]
+    minor_issues: list[str]
     rationale: str
 
+
+# Big enough for the longest cited passage (the LICN-003 §5 exam table is ~6,500
+# characters; whole short policies up to ~9,300). A cut-off passage made the judge mark
+# claims about the table's later rows as unsupported.
+JUDGE_PASSAGE_CHARS = 12000
+PARENT_CHARS = 600
 
 JUDGE_INSTRUCTIONS = """\
 You grade answers from a reference assistant about North Carolina educator licensure \
 (LICN) policies. You get the question, an answer key written from the policies, and the \
-assistant's answer: its claims, each followed by the policy text it cited.
+assistant's answer: its claims, each followed by the policy text it cited. A cited list \
+item is shown after the lead-in text of the sections above it (marked "context:"), \
+because a list item means what its lead-in says; judge the item together with that \
+context.
 
-Grade three things:
+Make these judgments:
 
-1. key_points: for each numbered key point in the answer key, is it "covered" (the \
-answer states it or something equivalent), "partial", "missing", or "contradicted" (the \
-answer says something incompatible with it)? The key is deliberately thorough; missing a \
-peripheral point is normal.
+1. key_points: for each numbered key point in the answer key:
+   - central: true if the key's bottom line depends on this point (the rule that decides \
+the question, or a deciding fact to ask for); false for supporting detail such as fees, \
+application documents, salary placement, or adjacent routes. The key is deliberately \
+thorough, so most keys have only one to three central points.
+   - status: "covered" (the answer states it or something equivalent), "partial", \
+"missing", or "contradicted" (the answer says something incompatible with it).
 2. claims: for each numbered assistant claim, judge ONLY against the cited policy text \
-shown under it. "supported" if that text backs the claim, "partially_supported" if it backs \
-part of it, "unsupported" if it does not (including claims with no citations). Arithmetic \
-done correctly from supported numbers counts as supported.
-3. overall: "correct" if the answer's bottom line and essential points agree with the \
-answer key and it states nothing materially wrong; "partially_correct" if the bottom line \
-is right but something important is missing or slightly wrong, or it hedges where the key \
-is definite; "incorrect" if the bottom line is wrong, it misses the central point, or it \
-states something materially false. Asking for missing facts when the key also does is \
-correct behavior. Declining to answer is correct only if the key says the policies do not \
-cover the question.
+shown under it (with its context). "supported" if that text backs the claim, \
+"partially_supported" if it backs part of it, "unsupported" if it does not (including \
+claims with no citations). Arithmetic done correctly from supported numbers counts as \
+supported.
+3. bottom_line: compare the conclusion an analyst would take away from the answer (its \
+summary and verdict together) with the key's. "agrees" if it is the same conclusion, \
+including when the answer asks for the same deciding facts the key asks for; \
+"partly_agrees" if it is right on part of a multi-part question or hedges where the key \
+gives a definite outcome; "disagrees" if it reaches a different outcome, or declines to \
+answer when the key says the policies do answer it.
+4. material_errors: statements in the answer that are wrong according to the policy text \
+or the key AND would change what the analyst concludes or does about this question. A \
+statement of policy that the passages do not support, presented as fact, counts if the \
+analyst could act on it. Do not list omissions here.
+5. minor_issues: other problems: wording that overstates the cited text, peripheral \
+inaccuracies, small unsupported inferences. Do not list omissions of supporting detail.
 
-List any materially wrong statements in incorrect_statements. Keep rationale to 1-3 \
-sentences.
+Keep rationale to 1-3 sentences.
 """
+
+
+def overall_label(j: Judgment) -> str:
+    """correct / partially_correct / incorrect, computed from the parts of the judgment."""
+    central = [g for g in j.key_points if g.central]
+    if j.bottom_line == "disagrees" or any(g.status == "contradicted" for g in central):
+        return "incorrect"
+    if (
+        j.bottom_line == "agrees"
+        and not j.material_errors
+        and all(g.status in ("covered", "partial") for g in central)
+    ):
+        return "correct"
+    return "partially_correct"
+
+
+def parent_context(corpus: Corpus, cid: str) -> list[str]:
+    """Lead-in lines of the sections above a cited item, outermost first.
+
+    'LICN-013 §3(b)' reads only "Emergency License"; its meaning ("DPI shall not add
+    license areas to the following") is in 'LICN-013 §3'.
+    """
+    ancestors = []
+    current = cid
+    while (parent := re.sub(r"\([^()]*\)$", "", current)) != current:
+        ancestors.append(parent)
+        current = parent
+    lines = []
+    for anc in reversed(ancestors):
+        text = corpus.passage(anc, max_chars=10**6) or ""
+        own = [line for line in text.split("\n") if line.startswith(f"[{anc}]")]
+        if own:
+            lines.append(own[0][:PARENT_CHARS])
+    return lines
 
 
 def judge_prompt(question: str, key: dict[str, Any], answer: AppAnswer, corpus: Corpus) -> str:
@@ -160,8 +214,17 @@ def judge_prompt(question: str, key: dict[str, Any], answer: AppAnswer, corpus: 
         if not claim.citations:
             lines.append("    (no citations)")
         for c in claim.citations:
-            text = corpus.passage(corpus.normalize(c) or c)
-            lines.append(f"    Cited {c}: {text or '(citation does not exist in the policies)'}")
+            cid = corpus.normalize(c) or c
+            text = corpus.passage(cid, max_chars=JUDGE_PASSAGE_CHARS)
+            if text is None:
+                lines.append(f"    Cited {c}: (citation does not exist in the policies)")
+                continue
+            # The answering model sees each policy's title and effective date; so does the judge.
+            p = corpus.by_code[cid[:8]]
+            header = f"{p.code} {p.title}, effective {p.effective_date or 'unknown'}"
+            lines.append(f"    Cited {c} [{header}]:")
+            lines += [f"      context: {line}" for line in parent_context(corpus, cid)]
+            lines.append(f"      {text}")
     for label, items in [
         ("Asked the analyst", answer.questions_for_user),
         ("Premise corrections", answer.premise_corrections),
@@ -201,13 +264,17 @@ def judge(
     kp_value = {"covered": 1.0, "partial": 0.5, "missing": 0.0, "contradicted": 0.0}
     claim_value = {"supported": 1.0, "partially_supported": 0.5, "unsupported": 0.0}
     n_kp, n_claims = len(key["key_points"]), len(answer.claims)
+    central = [g for g in j.key_points if g.central]
     return {
-        "overall": j.overall,
+        "overall": overall_label(j),
+        "bottom_line": j.bottom_line,
         "key_point_coverage": ratio_f(sum(kp_value[g.status] for g in j.key_points), n_kp),
+        "central_coverage": ratio_f(sum(kp_value[g.status] for g in central), len(central)),
         "contradicted_key_points": sum(g.status == "contradicted" for g in j.key_points),
         "claim_support": ratio_f(sum(claim_value[g.support] for g in j.claims), n_claims),
         "unsupported_claims": sum(g.support == "unsupported" for g in j.claims),
-        "incorrect_statements": j.incorrect_statements,
+        "incorrect_statements": j.material_errors,
+        "minor_issues": j.minor_issues,
         "judge_rationale": j.rationale,
     }, cost
 

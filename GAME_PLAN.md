@@ -1,6 +1,8 @@
 # Licensure RAG Assistant: Research Summary & Game Plan
 
-*Prepared October 10, 2026 · Revision 5 (October 11): the agentic retrieval pipeline is built and unit-tested (implementation plans 01–02); its real-API smoke test and evaluation are next. Revision 4 (end of day 1) recorded what was built and measured: corpus collected by saving pages from a browser (not scraped), answer keys and benchmark complete, hybrid RAG evaluated, reranker dropped. See [§0 Status](#0-status-as-of-october-11-2026).*
+*Prepared October 10, 2026 · Revision 6 (October 11, evening): the agent is evaluated on all 220 questions, a `convert` tool fixed backwards unit conversions, the LLM judge was rebuilt after a review, and the answer prompt was tuned on a new dev split. Revision 5: agent built and unit-tested (plans 01–02). Revision 4: corpus, answer keys, benchmark, hybrid RAG. See [§0 Status](#0-status-as-of-october-11-2026).*
+
+*How this file and the README split the work: [README.md](README.md) is the public project page and the single source of truth for status and measured results. This file is the internal plan: goals and audiences, research notes, design rationale, budget, cloud architecture, phases, and risks. Numbers here are only the ones that drove a decision.*
 
 **Decisions locked in:**
 - **Hosting:** GCP Cloud Run on the always-free tier, managed with Terraform (not built yet)
@@ -10,6 +12,8 @@
 - **Search index:** SQLite + sqlite-vec + FTS5 in one file (currently `data/index/`, later in Cloud Storage)
 - **Retrieval:** contextual chunks, hybrid dense + BM25 with reciprocal rank fusion, 20 chunks, **no reranker** (it lowered recall, §0)
 - **Citations:** structured output with policy-native citation IDs (`LICN-030 §1(a)(ii)`), checked against the corpus
+- **Arithmetic and units in code:** `calculate` for arithmetic, `convert` for CEU / semester-hour / clock-hour conversions (§3.1)
+- **Evaluation discipline:** tune prompts on the dev split (54 questions), report on the held-out test split (166); judge v2 (decomposed rubric, §7)
 
 **Goal:** Build an assistant that answers NC educator-licensure questions using only the **State Board of Education Licensure (LICN) policies**. Most questions will be hypothetical scenarios: *"Someone has X degree and Y license with Z years. What do they qualify for? Do they need more renewal credits?"* Each answer must cite the exact policy and section it relies on, show the user what facts it assumed, and say so plainly when the policies don't settle the question.
 
@@ -23,27 +27,36 @@
 
 ## 0. Status (as of October 11, 2026)
 
+Measured results live in the [README](README.md#results-so-far); this section records state and the decisions the numbers drove.
+
 | Area | State |
 |---|---|
 | Corpus | ✅ 24 LICN policies → `corpus/licn/` (623 citable passages). LICN-014 is cited by other policies but not in the corpus. |
-| Eval set | ✅ 220 draft questions (`evals/data/draft_questions.jsonl`) + silver answer keys (`evals/data/silver_answers.jsonl`). Not yet human-reviewed. |
-| Eval harness | ✅ `licn-eval`: deterministic citation/verdict metrics + LLM judge; `licn-eval retrieval` scores retrieval alone at no cost |
-| Long-context benchmark | ✅ 56% correct, 100% correct-or-partial (Haiku 5.5, 220 questions) |
-| Hybrid RAG | ✅ 37% correct, 99% correct-or-partial at 20 chunks. Single-shot retrieval misses supporting policies (median answer key spans 5 policies). |
-| Agentic retrieval | 🔨 Built and unit-tested (plans 01–02): six research tools, a bounded tool-use loop, `agent` and `agent_nocalc` pipelines, `licn-ask --trace`. **Not yet run against the real API or evaluated** (plan 03). |
+| Eval set | ✅ 220 questions + silver answer keys; fixed dev (54) / test (166) split in `evals/data/splits.json`. Keys not yet human-reviewed. |
+| Eval harness | ✅ `licn-eval`: deterministic metrics, context recall, unit-conversion check, judge v2, replay and re-judge tooling |
+| Long-context benchmark | ✅ evaluated (220) |
+| Hybrid RAG | ✅ evaluated (220, k=12 and k=20) |
+| Agentic retrieval | ✅ evaluated (220): closes about half the RAG-to-benchmark gap at about 2× RAG's cost. Seven tools including `convert`. |
+| Judge | ✅ rebuilt (v2) after review; agrees with a 24-answer hand-graded reference on 20/24. Sonnet cross-check pending. |
+| Answer prompt | ✅ v3, tuned on dev (coverage 73–74% → 78%, no verdict or support regressions) |
+| Full re-test on the test split | ⏭ next: all three pipelines with prompt v3 and judge v2 (~$2.50) |
 | Web UI, API, cloud, CI | not started |
 
 **Next steps** (build plans are in [implementation_plans/](implementation_plans/README.md)):
-1. **Smoke test the agent** on two real questions (about $0.01–0.03). This is the last open step of plan 02.
-2. **Evaluate it** (plan 03): add a free context-recall metric and a `licn-eval context` command, run `agent` against `rag` on the same 30-question sample, then all 220 questions, then the `agent_nocalc` ablation on renewal-math and eligibility questions. Estimated $2.50–4.00 in total, each run approved first.
-3. **Decide from the numbers** whether the agent becomes the production pipeline, then write the follow-on plans: citation verifier, eligibility worksheet format, API, frontend, infra, CI.
+1. Sonnet 5.5 grades the 24 reference answers once (~$0.50), to check for self-preference in the Haiku judge.
+2. Re-test long-context, RAG (k=20), and agent on the test split with prompt v3 and judge v2. These become the headline numbers.
+3. Decide whether the agent becomes the production pipeline, then write the follow-on plans: citation verifier, eligibility worksheet format, API, frontend, infra, CI.
 
 **What the measurements changed:**
 - **The reranker was dropped.** `mxbai-rerank-xsmall-v1` lowered Recall@8 from 48% to 42% and added about 7s per query on CPU.
 - **Context notes help a little** (+1–3 points of recall). Hybrid beats dense-only by about 1 point. BM25 alone is clearly worse.
-- **20 retrieved chunks beat 12** end to end (37% vs 27% correct).
+- **20 retrieved chunks beat 12** end to end.
 - **Embedding models must load in float32.** Qwen3-Embedding loads in bfloat16 by default, which was about 6x slower on a CPU without native bf16. That matters for Cloud Run too.
-- **The long-context benchmark beats single-shot RAG.** The gap is multi-hop: answers need several related policies (definitions, license types, exam tables). This is the case for agentic retrieval (Phase 2).
+- **The long-context benchmark beats single-shot RAG** because answers are multi-hop (median key spans 5 policies). **The agent reads more of the right sections** (80% of key sections in context vs 69% for RAG) and recovers about half the gap.
+- **A calculator isn't enough for unit math.** Models picked the wrong conversion direction, even inside the calculator (whose own schema example was backwards). Moving the direction into code (`convert`) took backwards conversions from 3 to 0 in 220 answers. Even the long-context benchmark makes this error, so it's reasoning, not retrieval.
+- **The first judge wasn't trustworthy.** It truncated cited passages (87 of 220 agent answers affected), couldn't see a list item's lead-in, and its single label flipped on 17% of identical answers. Rebuilt as smaller judgments with the label computed in code. **"Correct" rates from judge v1 and v2 are not comparable.**
+- **Per-question "correct" is too noisy to tune on.** Two identical runs differed on 17 of 54 questions. Tuning decisions use aggregate key-point coverage (stable to about ±1 point) with verdict match and unsupported claims as guardrails.
+- **Prompt tuning is part of the experiments, not frozen.** The earlier rule against tuning existed to keep pipeline comparisons fair and avoid tuning on the reported questions. Both are now handled differently: the shared answer prompt changes for every pipeline at once, and tuning uses only the dev split.
 
 ---
 
@@ -162,7 +175,7 @@ Not legal advice. Confirm with DPI Licensure or district HR.
 **Why this format matters for reliability:**
 - **Fact extraction is separated from rule application.** The model first lists the facts it pulled from her question. Missing facts become **❓ Unknown plus a follow-up question**, never a silent assumption. This targets risk #1.
 - **Every requirement row carries its own citation**, so she can check any single row in one click.
-- **Arithmetic is done in code, not by the LLM.** Credit hours, years, and deadlines go through a small `calculate` tool. LLMs make arithmetic slips, and this removes them.
+- **Arithmetic is done in code, not by the LLM.** Credit hours, years, and deadlines go through a small `calculate` tool, and unit conversions through `convert`, which owns the conversion direction (the model only names the units). Measured: models get the direction wrong often enough that a calculator alone didn't fix it (§0).
 - **The answer is a structured output** (a Pydantic schema), so the UI renders it consistently and the evals can grade each row separately.
 
 ### 3.2 Privacy by design
@@ -196,8 +209,8 @@ She already plans to describe people generically ("this person has…"), which i
 | Search index | **SQLite + `sqlite-vec` (vectors) + FTS5 (keyword/BM25)** in a single file. It is built by the ingestion job, uploaded to Cloud Storage, and loaded by the API at startup. The corpus is small and read-only between crawls, so a database server would be wasted money. *(Cloud SQL Postgres is not free.)* | **$0** |
 | Query embeddings | **Qwen3-Embedding-0.6B** via sentence-transformers in **float32** (about 0.2s per query on CPU); ONNX int8 is an option for a smaller container. Corpus embeddings are computed when the index is built. | **$0** |
 | Reranking | **None in production.** A local cross-encoder was tested and lowered recall (§0). | **$0** |
-| Bulk LLM work (chunk context notes, eval judging) | **Claude Haiku 5.5**: $0.10 / $0.50 per M tokens (input/output). Context notes for all 113 chunks cost $0.03. A full 220-question eval with judging costs about $0.70–0.90, run directly rather than through the Batch API (batch turnaround was unpredictable). | **~$1 per full eval** |
-| Answering | **Claude Haiku 5.5** (decided). Measured at **$0.0024/question** for RAG (20 chunks) and $0.0018 for the cached long-context benchmark. | **~$0.002/question** |
+| Bulk LLM work (chunk context notes, eval judging) | **Claude Haiku 5.5**: $0.10 / $0.50 per M tokens (input/output). Context notes for all 113 chunks cost $0.03. A full 220-question eval with judging costs about $0.80 (long-context) to $1.40 (agent), run directly rather than through the Batch API (batch turnaround was unpredictable). Prompt experiments use dev-split replays at about $0.25 each. | **~$1 per full eval** |
+| Answering | **Claude Haiku 5.5** (decided). Measured at **$0.0024/question** for RAG (20 chunks), $0.0047 for the agent, and $0.0018 for the cached long-context benchmark. | **~$0.002–0.005/question** |
 | Re-ingest | Manual: re-save pages, then run `licn-ingest` and `licn-index build`. A scheduled job would need an approved automated source (§2.2). | **$0** |
 | Feedback & usage logs | **Firestore** (thumbs up/down, flagged citations, per-question cost). No question text stored by default. | **$0** |
 | Secrets | **Secret Manager** (Anthropic API key) | **$0** (free tier) |
@@ -216,7 +229,7 @@ Prompt caching helps a lot here: the system prompt, tool definitions, and freque
 ## 5. Target architecture
 
 ```
-  Legend: ✅ built   🔨 built, not yet measured   ⏭ next (Phase 2)   ○ later
+  Legend: ✅ built and measured   🔨 built, not yet measured   ⏭ next (Phase 2)   ○ later
 
   INGESTION (manual trigger, offline)
   ✅ pages saved from a browser ──► licn-ingest: parse ──► corpus/licn/*.json (+ .md, manifest with hashes)
@@ -230,14 +243,15 @@ Prompt caching helps a lot here: the system prompt, tool definitions, and freque
 
   QUERY (online)
   ✅ today:   question ──► hybrid search (dense + BM25 → RRF → top 20) ──► Haiku, structured answer
-  🔨 `agent` pipeline: question ──► seed search (hybrid, 12 chunks) ──► research loop
+  ✅ `agent` pipeline: question ──► seed search (hybrid, 12 chunks) ──► research loop
         (Haiku 5.5, max 8 turns, tools stop reading at 6,000 words of policy text)
         ├─ search(query, policy?)               the hybrid search above, optionally inside one policy
         ├─ get_policy_outline(code)             a policy's sections with citation IDs and word counts
         ├─ get_section(id)                      read a whole section with its sub-items (a bare code reads a short policy)
         ├─ follow_references(id)                read what a passage points at; list passages that cite its policy
         ├─ list_license_types()                 the license catalog, so it reasons over the right options
-        └─ calculate(expression)                credits, years, deadlines computed in code
+        ├─ calculate(expression)                credits, years, deadlines computed in code
+        └─ convert(value, from_unit, to_unit)   CEU ↔ semester hour ↔ clock hour, direction owned by code
         │
         ▼  every passage the tools showed, in document order
   ✅ Structured answer (same call and prompt as RAG): verdict • cited claims • questions for the analyst • not covered
@@ -334,7 +348,11 @@ These points make a good security section in the README.
    Every citation is validated against the corpus. 6 keys came from Sonnet 5.5 (pilot) and 214 from Haiku 5.5, chosen for cost. Total cost was $0.94. All are marked `review_status: "silver"` in `evals/data/silver_answers.jsonl`.
 3. **Gold (her review, later):** she spot-checks silver items and marks each `gold`, `fixed`, or `rejected`, starting with the 18 low-confidence keys. Headline metrics will then be reported on gold items.
 
-**Known limitation:** Haiku currently writes most keys, answers the questions, and judges the answers, which risks rating its own mistakes as correct. Comparisons between pipelines are still fair, since every pipeline faces the same keys and judge. For absolute numbers, re-judge with Sonnet (`--judge-model claude-sonnet-5-5`, about $2–3 per run) and rely on her gold review.
+**Dev/test split.** `evals/data/splits.json` fixes 54 dev and 166 test questions, stratified by question type (hash of the id, so it's deterministic). Prompts and tools are tuned against dev only; reported numbers come from test. Cheap tuning loop: `licn-eval run --replay <agent run> --split dev` re-runs only the answer step on the passages a saved run collected (no retrieval variance, about a third of the cost); `licn-eval rejudge <run>` grades saved answers again. Every run records a fingerprint of the prompts, the split, and a label.
+
+**Judge (v2, rebuilt October 11).** A review found the first judge unreliable: cited passages were cut at 6,000 characters (the exam table is longer), list items were shown without their lead-in, the policy header (effective date) was hidden, and its single holistic label flipped on 17% of identical answers. v2 shows the full passage with the lead-in of each parent section and the policy header, and asks for smaller judgments: each key point's coverage and whether it is *central* to the bottom line, whether the bottom line agrees with the key, material errors (wrong and would change what the analyst does) separate from minor issues, and per-claim support. Correct / partial / incorrect is computed in code. Validation on 54 dev answers graded twice: agreement with a 24-answer hand-graded reference set (`evals/data/judge_reference.jsonl`, graded by Claude Opus 5.5) rose from 11–14/24 to 20/24; aggregate "correct" was identical across passes, but about 15% of per-question labels still flip (mostly agrees vs partly-agrees on hedged answers), so **compare aggregates, never single questions**.
+
+**Known limitations:** Haiku writes most keys, answers the questions, and judges the answers, which risks rating its own mistakes as correct, and the reference set was graded by another Claude model. Comparisons between pipelines are still fair, since every pipeline faces the same keys and judge. Before the headline re-test: grade the 24 references with Sonnet once (`licn-eval rejudge <run> --judge-model claude-sonnet-5-5 --ids ...`, about $0.50) to check for self-preference, and have her spot-check the reference labels and the low-confidence keys.
 
 Planned mix (actual after re-labeling: eligibility 82, unanswerable 50, missing facts 36, lookup 33, renewal math 13, temporal 6):
 
@@ -358,7 +376,7 @@ Planned mix (actual after re-labeling: eligibility 82, unanswerable 50, missing 
 
 **Ablation table** (in the README). Run the same eval set through each pipeline and report the gains. Done so far: BM25 → dense → hybrid → + context notes → ± reranker → k=12 vs k=20, plus the long-context benchmark. Still to come:
 
-`+ agent tools` → `+ calculator` → `+ verifier`. The first two come from plan 03's `agent` and `agent_nocalc` runs; the pipelines exist, the numbers don't yet.
+`+ agent tools` (measured: README) → `+ calculator/convert` → `+ verifier`. The `agent_nocalc` ablation was deliberately not run: the calculator's problem was that the model chose the wrong formula, which an ablation can't diagnose. Conversion errors are measured directly instead (`licn-eval conversions`), and `convert` took them to zero.
 
 Also run **Haiku vs. Sonnet vs. a local model** on the same evals. "I measured each technique and model on a real policy corpus and chose the cheapest configuration that met the bar" is a strong interview story.
 
@@ -399,8 +417,12 @@ Also run **Haiku vs. Sonnet vs. a local model** on the same evals. "I measured e
 ### Phase 2: Agent & eligibility reasoning ⏭ next
 - [ ] **Goal: close the gap between RAG (37% correct) and the long-context benchmark (56%)** without giving up retrieval
 - [x] Tools (plan 01): `search`, `get_policy_outline`, `get_section` (a bare policy code reads a short policy, which replaces a separate `lookup_policy`), `follow_references`, `list_license_types`, `calculate`
-- [x] Tool-use loop pipeline `agent` plus `agent_nocalc` ablation, and `licn-ask --trace` (plan 02). Smoke test against the real API still to run.
-- [ ] Evaluate the agent against RAG and the benchmark: context recall, correctness, cost, latency (plan 03)
+- [x] Tool-use loop pipeline `agent` plus `agent_nocalc` ablation, and `licn-ask --trace` (plan 02), smoke-tested against the real API.
+- [x] Evaluate the agent against RAG and the benchmark: context recall, correctness, cost, latency (plan 03). The agent recovers about half the gap; the goal above is not met yet.
+- [x] `convert` tool for unit conversions; conversion check in the harness
+- [x] Judge review and rebuild (v2); dev/test split; replay and re-judge tooling
+- [x] Answer prompt tuning round 1 on dev (v3)
+- [ ] Sonnet cross-check of the judge; full re-test of all pipelines on the test split
 - [ ] Worksheet output schema + strict citation contract + missing-fact questions + abstention
 - [ ] Verifier pass; eligibility, citation, and abstention metrics
 - [ ] PII check; OpenTelemetry tracing; per-question cost logging to Firestore; a CLI for quick testing
@@ -455,7 +477,8 @@ Also run **Haiku vs. Sonnet vs. a local model** on the same evals. "I measured e
 3. ~~Access~~ → **GCP Cloud Run, free tier.**
 4. ~~Answering model / scraper~~ → **Haiku 5.5 / pages saved from a browser** (bot protection blocks automated scraping).
 5. **Open:** is LICN-014 (Provisional License) still in force? It's cited by three policies but wasn't available to save.
-6. **Open:** re-judge with Sonnet for absolute numbers, or wait for her gold review?
+6. **Partly answered:** the judge was rebuilt and validated against a model-graded reference set (§7). Still open: a one-time Sonnet cross-check (~$0.50) and her spot-check of the reference labels before headline numbers are published.
+7. **Open:** does the agent replace RAG as the production pipeline? Decide after the test-split re-test.
 
 ---
 

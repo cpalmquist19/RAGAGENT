@@ -139,7 +139,7 @@ def test_research_request_shape(corpus: Corpus) -> None:
     names = [t["name"] for t in calls[0]["tools"]]
     assert names == sorted(
         ["search", "get_policy_outline", "get_section", "follow_references"]
-        + ["list_license_types", "calculate"]
+        + ["list_license_types", "calculate", "convert"]
     )
     assert calls[0]["cache_control"] == {"type": "ephemeral"}
     assert calls[0]["system"][-1]["cache_control"] == {"type": "ephemeral"}

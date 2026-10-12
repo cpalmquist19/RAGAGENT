@@ -1,4 +1,4 @@
-"""The research agent's tools: search, outline, read, follow references, calculate.
+"""The research agent's tools: search, outline, read, follow references, calculate, convert.
 
 Each tool returns plain text for the model and records the passages it showed in an
 Evidence set, which becomes the answer step's context. Tools never raise: bad input comes
@@ -8,7 +8,7 @@ back as an error message the model can act on.
 import re
 from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Literal
 
 from anthropic.types import ToolParam
 from pydantic import BaseModel, Field, ValidationError
@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field, ValidationError
 from licn_rag.agent.calculator import calculate
 from licn_rag.agent.evidence import Evidence
 from licn_rag.agent.references import reference_graph
+from licn_rag.agent.units import convert
 from licn_rag.corpus import Corpus, cite_id
 from licn_rag.ingest.models import Block, Policy
 from licn_rag.rag.chunking import Chunk, block_line, truncate
@@ -28,6 +29,10 @@ MAX_WHOLE_POLICY_WORDS = 800
 OUTLINE_LEAD_WORDS = 15
 MAX_CITING = 10
 LICENSE_TERM = re.compile(r'^\s*[“"]([^”"]+)[”"]')
+# A hand-written CEU/semester-hour factor; those conversions must go through convert.
+HAND_CONVERSION = re.compile(r"\b2\s*/\s*3\b|\b3\s*/\s*2\b|\b0\.6[67]")
+CEU_RULE = "LICN-001 §2(g)"
+MATH_TOOLS = ("calculate", "convert")
 
 
 class SearchInput(BaseModel):
@@ -57,13 +62,19 @@ class NoInput(BaseModel):
 
 
 class CalculateInput(BaseModel):
-    description: str = Field(
-        description="What is being computed, e.g. 'CEUs from 6 semester hours'."
-    )
+    description: str = Field(description="What is being computed, e.g. 'CEUs still needed'.")
     expression: str = Field(
         description="Arithmetic only: numbers, + - * / // % **, parentheses, and "
-        "round/min/max/abs. Example: '6 * 2/3'."
+        "round/min/max/abs. Example: '8 - 6.5'. Not for unit conversions; use convert."
     )
+
+
+class ConvertInput(BaseModel):
+    value: float = Field(description="The amount to convert, e.g. 6.")
+    from_unit: Literal["ceu", "semester_hour", "clock_hour"] = Field(
+        description="The unit the amount is in."
+    )
+    to_unit: Literal["ceu", "semester_hour", "clock_hour"] = Field(description="The unit you want.")
 
 
 @dataclass(frozen=True)
@@ -117,9 +128,19 @@ SPECS: list[ToolSpec] = [
     ),
     ToolSpec(
         "calculate",
-        "Exact arithmetic for credits, CEUs, hours, years, and shortfalls. Use it instead "
-        "of doing math yourself. Use only numbers from the question and the policies.",
+        "Exact arithmetic for totals, differences, shortfalls, and year counts. Use it "
+        "instead of doing math yourself. Use only numbers from the question and the "
+        "policies. Unit conversions go through convert, not here.",
         CalculateInput,
+        reads=False,
+    ),
+    ToolSpec(
+        "convert",
+        "Converts between CEUs, semester credit hours, and clock hours using the CEU "
+        "definition (LICN-001 §2(g)), with the direction handled for you. Use it for every "
+        "unit conversion, e.g. value=6, from_unit='semester_hour', to_unit='ceu'. Adds the "
+        "rule's passage to the evidence so the answer can cite it.",
+        ConvertInput,
         reads=False,
     ),
 ]
@@ -172,7 +193,7 @@ class ToolBox:
         self.index = index
         self.search_mode = search_mode
         self.max_evidence_words = max_evidence_words
-        self.specs = [s for s in SPECS if calculator or s.name != "calculate"]
+        self.specs = [s for s in SPECS if calculator or s.name not in MATH_TOOLS]
         self.graph = reference_graph(corpus)
         self.evidence = Evidence(corpus)
         self.calculations: list[str] = []
@@ -184,6 +205,7 @@ class ToolBox:
             "follow_references": self._follow_references,
             "list_license_types": self._list_license_types,
             "calculate": self._calculate,
+            "convert": self._convert,
         }
 
     def definitions(self) -> list[ToolParam]:
@@ -427,9 +449,30 @@ class ToolBox:
         )
 
     def _calculate(self, args: CalculateInput) -> ToolOutcome:
+        if HAND_CONVERSION.search(args.expression):
+            return ToolOutcome(
+                "This looks like a unit conversion written by hand (a 2/3 or 3/2 factor). "
+                "Use convert (value, from_unit, to_unit) instead: it applies LICN-001 §2(g) "
+                "in the right direction. Then use calculate on its result if needed.",
+                is_error=True,
+            )
         try:
             result = calculate(args.expression)
         except ValueError as e:
             return ToolOutcome(f"Calculation failed: {e}", is_error=True)
         self.calculations.append(f"{args.description.strip()}: {result}")
         return ToolOutcome(result)
+
+    def _convert(self, args: ConvertInput) -> ToolOutcome:
+        try:
+            line, rule = convert(args.value, args.from_unit, args.to_unit)
+        except ValueError as e:
+            return ToolOutcome(f"Conversion failed: {e}", is_error=True)
+        self.calculations.append(f"Unit conversion: {line}")
+        if rule is None:
+            return ToolOutcome(line)
+        # The rule is a few dozen words and the answer must cite it, so it is added even
+        # past the reading budget.
+        policy = self.corpus.by_code[CEU_RULE[:8]]
+        self.evidence.add_blocks(policy, blocks_under(policy, CEU_RULE))
+        return ToolOutcome(f"{line}\nSource: [{rule}]")

@@ -1,0 +1,13 @@
+{
+  "pipeline": "replay",
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "questions": 54,
+  "started": "2026-10-11T20:35:04",
+  "prompt_version": "56f63b7e",
+  "split": "dev",
+  "replay_of": "evals/runs/20261011-200047-agent",
+  "label": "fixed judge pass B on baseline replay 1",
+  "pipeline_config": null,
+  "rejudge_of": "evals\\runs\\20261011-202250-replay"
+}

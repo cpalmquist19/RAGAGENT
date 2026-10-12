@@ -47,10 +47,10 @@ Add a new area only when a plan doesn't fit any of these. Add it to this table i
 | # | Plan | Area / phase | Status | Depends on |
 |---|---|---|---|---|
 | 01 | [Research tools](01-agent-p1-research-tools.md) | agent p1 | done | none |
-| 02 | [Agent loop](02-agent-p2-agent-loop.md) | agent p2 | in progress | 01 |
-| 03 | [Agent evaluation](03-agent-p3-evaluation.md) | agent p3 | not started | 02 |
+| 02 | [Agent loop](02-agent-p2-agent-loop.md) | agent p2 | done | 01 |
+| 03 | [Agent evaluation](03-agent-p3-evaluation.md) | agent p3 | done (see its status line) | 02 |
 
-Expected next plans (not written yet, numbers not reserved): verifier p1, worksheet p1, api p1, frontend p1, infra p1, ci p1. Write them after plan 03's results are in, because those results decide whether the agent becomes the production pipeline.
+Expected next plans (not written yet, numbers not reserved): the test-split re-test of all pipelines (prompt v3, judge v2), then verifier p1, worksheet p1, api p1, frontend p1, infra p1, ci p1. The re-test decides whether the agent becomes the production pipeline.
 
 ### Status values
 

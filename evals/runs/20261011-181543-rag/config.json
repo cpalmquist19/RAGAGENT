@@ -1,0 +1,14 @@
+{
+  "pipeline": "rag",
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "questions": 30,
+  "started": "2026-10-11T18:15:43",
+  "pipeline_config": {
+    "mode": "hybrid",
+    "rerank": false,
+    "contextual": true,
+    "k": 20,
+    "candidates": 30
+  }
+}

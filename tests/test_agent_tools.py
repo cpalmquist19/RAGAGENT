@@ -30,6 +30,7 @@ def test_definitions_sorted_and_valid(corpus: Corpus) -> None:
     expected = sorted(
         [
             "calculate",
+            "convert",
             "follow_references",
             "get_policy_outline",
             "get_section",
@@ -120,12 +121,46 @@ def test_list_license_types(box: ToolBox) -> None:
 
 
 def test_calculate_records(box: ToolBox) -> None:
+    out = box.run("calculate", {"description": "CEUs short", "expression": "8 - 6.5"})
+    assert out.text == "8 - 6.5 = 1.5"
+    assert box.calculations == ["CEUs short: 8 - 6.5 = 1.5"]
+
+
+@pytest.mark.parametrize("expression", ["6 * 2/3", "6 / (2 / 3)", "6 * 3/2", "6 * 0.667"])
+def test_calculate_refuses_hand_conversions(box: ToolBox, expression: str) -> None:
     out = box.run(
-        "calculate",
-        {"description": "CEUs from 6 semester hours", "expression": "6 * 2/3"},
+        "calculate", {"description": "CEUs from 6 semester hours", "expression": expression}
     )
-    assert out.text == "6 * 2/3 = 4"
-    assert box.calculations == ["CEUs from 6 semester hours: 6 * 2/3 = 4"]
+    assert out.is_error
+    assert "convert" in out.text
+    assert box.calculations == []
+
+
+@pytest.mark.parametrize("expression", ["12/3", "24 - 13/2", "16/3"])
+def test_calculate_allows_other_fractions(box: ToolBox, expression: str) -> None:
+    assert not box.run("calculate", {"description": "x", "expression": expression}).is_error
+
+
+def test_convert_records_and_adds_rule(box: ToolBox) -> None:
+    out = box.run("convert", {"value": 6, "from_unit": "semester_hour", "to_unit": "ceu"})
+    assert not out.is_error
+    assert out.text.startswith("6 semester credit hours = 9 CEUs")
+    assert "[LICN-001 §2(g)(i)]" in out.text
+    assert box.calculations == [f"Unit conversion: {out.text.splitlines()[0]}"]
+    assert {"LICN-001 §2(g)", "LICN-001 §2(g)(i)", "LICN-001 §2(g)(ii)"} <= set(box.evidence.ids())
+
+
+def test_convert_refuses_semester_to_clock(box: ToolBox) -> None:
+    out = box.run("convert", {"value": 3, "from_unit": "semester_hour", "to_unit": "clock_hour"})
+    assert out.is_error
+    assert box.calculations == []
+    out2 = box.run("convert", {"value": 3, "from_unit": "credits", "to_unit": "ceu"})
+    assert out2.is_error and "Invalid input" in out2.text
+
+
+def test_no_calculator_hides_math_tools(corpus: Corpus) -> None:
+    names = [d["name"] for d in ToolBox(corpus, None, calculator=False).definitions()]
+    assert "calculate" not in names and "convert" not in names
 
 
 def test_calculate_error(box: ToolBox) -> None:

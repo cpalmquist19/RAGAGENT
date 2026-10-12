@@ -1,0 +1,20 @@
+{
+  "pipeline": "agent",
+  "model": "claude-haiku-5-5",
+  "judge_model": null,
+  "questions": 54,
+  "started": "2026-10-11T20:58:39",
+  "prompt_version": "2798d882",
+  "split": "dev",
+  "replay_of": null,
+  "label": "research prompt r1: + 'what the analyst will need next' (other routes, exams, fees, application); answer prompt v3",
+  "pipeline_config": {
+    "seed_k": 12,
+    "max_turns": 8,
+    "max_evidence_words": 6000,
+    "calculator": true,
+    "research_effort": "medium",
+    "answer_effort": "medium",
+    "search_mode": "hybrid"
+  }
+}

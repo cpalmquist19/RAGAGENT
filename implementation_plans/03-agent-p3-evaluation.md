@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Plan** | 03 · agent phase 3 of 3 |
-| **Status** | not started |
+| **Status** | done (step 6c ablation deliberately not run; the work went beyond this plan: `convert` tool, judge v2, dev/test split, prompt tuning. See GAME_PLAN §0 and §7) |
 | **Depends on** | 02 (agent loop) must be `done` |
 | **Estimated size** | 4 small edits to existing files (~150 lines), test additions (~80 lines), doc updates |
 | **API cost** | $0 for steps 1–5. 💲 About $2.50–4.00 in total for the eval runs in step 6, each run approved by the user first. |

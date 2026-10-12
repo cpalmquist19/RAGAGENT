@@ -8,7 +8,7 @@ from licn_rag.agent.calculator import calculate, evaluate, format_number
 @pytest.mark.parametrize(
     ("expression", "expected"),
     [
-        ("6 * 2/3", "6 * 2/3 = 4"),
+        ("6 / (2/3)", "6 / (2/3) = 9"),
         ("8 - 5.5", "8 - 5.5 = 2.5"),
         ("10 / 3", "10 / 3 = 3.3333"),
         ("round(10 / 3, 2)", "round(10 / 3, 2) = 3.33"),

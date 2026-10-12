@@ -1,0 +1,12 @@
+{
+  "pipeline": "replay",
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "questions": 54,
+  "started": "2026-10-11T20:46:32",
+  "prompt_version": "cc8fcb7b",
+  "split": "dev",
+  "replay_of": "evals/runs/20261011-200047-agent",
+  "label": "prompt v2: v1 + explicit verdict definitions (needs_more_info vs conditional vs not_covered)",
+  "pipeline_config": null
+}

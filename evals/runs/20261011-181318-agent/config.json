@@ -1,0 +1,16 @@
+{
+  "pipeline": "agent",
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "questions": 30,
+  "started": "2026-10-11T18:13:18",
+  "pipeline_config": {
+    "seed_k": 12,
+    "max_turns": 8,
+    "max_evidence_words": 6000,
+    "calculator": true,
+    "research_effort": "medium",
+    "answer_effort": "medium",
+    "search_mode": "hybrid"
+  }
+}

@@ -2,7 +2,7 @@
 
     question ─► seed search (hybrid, 12 chunks)
              ─► research loop: Haiku calls tools (search, outline, read section, follow
-                references, list license types, calculate) for up to max_turns calls
+                references, list license types, calculate, convert) for up to max_turns calls
              ─► every passage the tools showed, in document order
              ─► the same structured-answer call the RAG pipeline makes
 
@@ -53,7 +53,7 @@ class AgentConfig:
 
 VARIANTS: dict[str, AgentConfig] = {
     "agent": AgentConfig(),
-    "agent_nocalc": AgentConfig(calculator=False),  # ablation: does the calculator help?
+    "agent_nocalc": AgentConfig(calculator=False),  # ablation: do calculate and convert help?
 }
 
 
